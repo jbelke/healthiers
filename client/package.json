@@ -1,0 +1,52 @@
+{
+  "name": "healthiers-client",
+  "version": "0.0.0",
+  "description": "healthiers client",
+  "main": "server.js",
+  "scripts": {
+    "serve": "webpack-dev-server --no-info",
+    "build": "webpack",
+    "semantic": "gulp clean build-css build-assets --gulpfile semantic/gulpfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/healthiers/client.git"
+  },
+  "author": "Balazs Edes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/healthiers/client/issues"
+  },
+  "homepage": "https://github.com/healthiers/client#readme",
+  "dependencies": {
+    "history": "^2.1.2",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.6.1",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2",
+    "redux-observable": "^0.8.0",
+    "rxjs": "^5.0.0-beta.10",
+    "semantic-ui": "^2.2.6",
+    "semantic-ui-react": "^0.59.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-eslint": "^7.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.25.0",
+    "eslint": "^3.9.1",
+    "eslint-plugin-react": "^6.6.0",
+    "express": "^4.14.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "json-loader": "^0.5.4",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-dev-server": "^1.14.1"
+  }
+}

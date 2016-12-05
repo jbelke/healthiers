@@ -1,0 +1,17 @@
+{
+  "name": "healthiers",
+  "version": "0.0.0",
+  "description": "Healthiers main repo",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/healthiers/healthiers.git"
+  },
+  "author": "Balazs Edes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/healthiers/healthiers/issues"
+  },
+  "homepage": "https://github.com/healthiers/healthiers#readme"
+}

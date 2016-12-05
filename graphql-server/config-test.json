@@ -1,0 +1,28 @@
+{
+  "port": 3000,
+  "auth": {
+    "secret": "This Is Top Secret Stuff"
+  },
+  "rethinkdb": {
+    "config": {
+      "host": "localhost",
+      "port": 28015,
+      "authKey": "",
+      "db": "healthiers"
+    },
+    "pool": {
+      "min": 0,
+      "max": 1
+    },
+    "tables": {
+      "patients": {
+        "config": {
+          "primaryKey": "id"
+        },
+        "indices": {
+          "email": {}
+        }
+      }
+    }
+  }
+}
