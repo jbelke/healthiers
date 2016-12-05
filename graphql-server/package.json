@@ -1,0 +1,50 @@
+{
+  "name": "graphql-server",
+  "version": "0.0.1",
+  "author": "Balazs Edes",
+  "main": "src/index.js",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "express-graphiql-toolbox": "0.0.1",
+    "express-graphql": "^0.6.1",
+    "express-jwt": "^5.1.0",
+    "generic-pool": "^3.0.0-beta.1",
+    "graphql": "^0.8.2",
+    "graphql-custom-types": "^0.7.1",
+    "graphql-errors": "^2.1.0",
+    "graphql-server-express": "^0.4.3",
+    "joi": "^10.0.1",
+    "jsonwebtoken": "^7.1.9",
+    "mini-dash": "0.0.2",
+    "rethinkdb": "^2.3.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "eslint": "^3.9.1",
+    "faker": "^3.1.0",
+    "jest": "^17.0.3",
+    "meow": "^3.7.0",
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "server": "nodemon --exec babel-node -- src/server.js",
+    "db": "rethinkdb -d ./db --log-file ./db/logs.db --daemon",
+    "db-noadmin": "rethinkdb -d ./db --log-file ./db/logs.db --no-http-admin --daemon",
+    "script": "babel-node src/scripts",
+    "lint": "eslint src/** --config .eslintrc.json",
+    "test": "jest"
+  },
+  "jest": {
+    "testRegex": "\\.(test|spec)\\.(js|jsx)$",
+    "verbose": true,
+    "setupFiles": [
+      "src/__tests__/__reset__.js"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "6.1"
+before_script:
+  - npm run script i d c
+script:
+  - npm run lint
+  - npm test
+addons:
+  rethinkdb: '2.3.5'
+notifications:
+  email: false

@@ -3,6 +3,12 @@
   "version": "0.0.0",
   "description": "Healthiers main repo",
   "scripts": {
+    "start-dev": "concurrently -c red,green,blue -n db,server,client -p \"[{name}]\" \"npm run db-noadmin\" \"npm run server\" \"npm run watch-client\" ",
+    "server": "nodemon --exec babel-node -- index.js",
+    "watch-client": "npm --prefix ./client run watch",
+    "build-client": "npm --prefix ./client run build",
+    "db": "npm --prefix ./graphql-server run db",
+    "db-noadmin": "npm --prefix ./graphql-server run db-noadmin"
   },
   "repository": {
     "type": "git",
@@ -13,5 +19,17 @@
   "bugs": {
     "url": "https://github.com/healthiers/healthiers/issues"
   },
-  "homepage": "https://github.com/healthiers/healthiers#readme"
+  "homepage": "https://github.com/healthiers/healthiers#readme",
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
 }

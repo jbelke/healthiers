@@ -1,13 +1,13 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const HtmlPlugin = require('html-webpack-plugin')
 const { ProvidePlugin } = require('webpack')
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/main.js',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
-    publicPath: '/static/'
+    filename: 'bundle.js'
   },
   module: {
     loaders: [
@@ -42,6 +42,7 @@ module.exports = {
     new ProvidePlugin({
       'React': 'react',
     }),
+    new HtmlPlugin({ template: 'src/index.html' }),
   ],
   devServer: {
     inline: true,
