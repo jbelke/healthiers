@@ -8,3 +8,4 @@ addons:
   rethinkdb: '2.3.5'
 notifications:
   email: false
+  
