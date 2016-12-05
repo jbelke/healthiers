@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - "6.1"
+before_script:
+  - cd client && npm install && cd ..
+  - cd graphql-server && npm install && cd ..
 script:
   - npm run lint
   - npm test
@@ -8,4 +11,3 @@ addons:
   rethinkdb: '2.3.5'
 notifications:
   email: false
-  
