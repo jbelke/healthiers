@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "author": "Balazs Edes",
   "main": "src/index.js",
+  "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
@@ -34,8 +35,10 @@
   },
   "scripts": {
     "server": "nodemon --exec babel-node -- src/server.js",
-    "db": "rethinkdb -d ./db --log-file ./db/logs.db --daemon",
-    "db-noadmin": "rethinkdb -d ./db --log-file ./db/logs.db --no-http-admin --daemon",
+    "db": "rethinkdb -d ./db --log-file ./db/logs.db",
+    "db-noadmin": "rethinkdb -d ./db --log-file ./db/logs.db --no-http-admin",
+    "db-daemon": "rethinkdb -d ./db --log-file ./db/logs.db --no-http-admin --daemon",
+    "db-daemon-noadmin": "rethinkdb -d ./db --log-file ./db/logs.db --daemon",
     "script": "babel-node src/scripts",
     "lint": "eslint src/** --config .eslintrc.json",
     "test": "jest"

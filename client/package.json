@@ -4,7 +4,8 @@
   "description": "healthiers client",
   "main": "src/index.js",
   "scripts": {
-    "h": "webpack --help",
+    "lint": "eslint src/** --config .eslintrc.json --ignore-pattern *.html",
+    "test": "node -e \"console.log('Client tests are coming soon...')\"",
     "watch": "webpack --progress --colors --watch --no-info --display-error-details",
     "serve": "webpack-dev-server --no-info",
     "build": "webpack",
@@ -43,7 +44,7 @@
     "babel-preset-react": "^6.11.1",
     "css-loader": "^0.25.0",
     "eslint": "^3.9.1",
-    "eslint-plugin-react": "^6.6.0",
+    "eslint-plugin-react": "^6.8.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",

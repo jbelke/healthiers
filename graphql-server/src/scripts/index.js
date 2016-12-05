@@ -1,7 +1,7 @@
 import meow from 'meow'
 import { nok, lf, fatalError } from './utils'
 import createPool from '../database/pool'
-import { rethinkdb as dbOptions } from '../../config' // TODO non global config
+import { rethinkdb as dbOptions } from '../../../config' // TODO non global config
 
 const { input, flags } = meow()
 

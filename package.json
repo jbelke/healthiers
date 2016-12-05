@@ -3,12 +3,17 @@
   "version": "0.0.0",
   "description": "Healthiers main repo",
   "scripts": {
-    "start-dev": "concurrently -c red,green,blue -n db,server,client -p \"[{name}]\" \"npm run db-noadmin\" \"npm run server\" \"npm run watch-client\" ",
+    "start-dev": "concurrently -c red,green,blue -n db,sr,cl -p \"[{name}]\" \"npm run db\" \"npm run server\" \"npm run watch-client\" ",
     "server": "nodemon --exec babel-node -- index.js",
-    "watch-client": "npm --prefix ./client run watch",
-    "build-client": "npm --prefix ./client run build",
-    "db": "npm --prefix ./graphql-server run db",
-    "db-noadmin": "npm --prefix ./graphql-server run db-noadmin"
+    "watch-client": "cd client && npm run watch",
+    "build-client": "cd client && npm run build",
+    "db": "cd graphql-server && npm run db-daemon-noadmin",
+    "test-server": "cd graphql-server && npm test && cd ..",
+    "test-client": "cd client && npm test && cd ..",
+    "test": "npm run test-server && npm run test-client",
+    "lint-server": "cd graphql-server && npm run lint && cd ..",
+    "lint-client": "cd client && npm run lint && cd ..",
+    "lint": "npm run lint-server && npm run lint-client"
   },
   "repository": {
     "type": "git",

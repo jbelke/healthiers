@@ -1,5 +1,5 @@
 import { createQuery } from './queries'
-import config, { rethinkdb as dbConfig } from '../../config-test'
+import config, { rethinkdb as dbConfig } from '../../../config-test'
 import createPool from '../database/pool'
 
 describe('register', () => {
