@@ -4,7 +4,6 @@ import addGraphQLServer from './graphql-server'
 import config, { port } from './config.json'
 
 const services = [addClient, addGraphQLServer]
-console.log(services)
 
 const app = services.reduce(
   (expressApp, service) => service(expressApp, config),

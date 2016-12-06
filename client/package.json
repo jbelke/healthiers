@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint src/** --config .eslintrc.json --ignore-pattern *.html",
     "test": "node -e \"console.log('Client tests are coming soon...')\"",
-    "watch": "webpack --progress --colors --watch --no-info --display-error-details",
+    "watch": "webpack --colors --watch --no-info --display-error-details",
     "serve": "webpack-dev-server --no-info",
     "build": "webpack",
     "semantic": "gulp clean build-css build-assets --gulpfile semantic/gulpfile.js"
