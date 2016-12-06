@@ -23,14 +23,21 @@ cd healthiers
 ```
 You can see the most important directories of the project: `client` and `graphql-server`
 
-It's time to install the NPM dependencies in both `client` and `graphql-server` - 
-note that on windows you might have to do these as separate commands
+It's time to install the NPM dependencies in the root folder and both `client` and `graphql-server` - 
+note that on windows you might have to do these as separate commands, the `&&` might not work.
 
 ```bash
+npm install
 cd client && npm install && cd ..
 cd server && npm install && cd ..
 ```
-No you are ready to run the app
+Now everything should be properly installed, you can start and initialize your database. 
+Run this in the root folder:
+
+```bash
+npm run init
+```
+The app is ready to be run
 
 ```bash
 npm run start-dev
