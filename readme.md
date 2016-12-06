@@ -1,4 +1,4 @@
-# healthiers
+# healthiers [![Build Status](https://travis-ci.org/healthiers/healthiers.svg?branch=master)](https://travis-ci.org/healthiers/healthiers)
 
 A unified and safely accessible home for your medical records. Sometimes soon.
 
