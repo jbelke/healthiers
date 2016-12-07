@@ -31,7 +31,10 @@ npm install
 cd client && npm install && cd ..
 cd server && npm install && cd ..
 ```
-Now everything should be properly installed, you can start and initialize your database. 
+Now everything should be properly installed, you can start and initialize your database 
+and compile semantic-ui's css (this has to be looked at, semantic handles this horribly, 
+we have a bunch of dependencies checked in as source). 
+
 Run this in the root folder:
 
 ```bash

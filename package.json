@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "Healthiers main repo",
   "scripts": {
-    "init": "npm run db && cd graphql-server && npm run script i d c && cd ..",
+    "init": "npm run init-db && npm run init-semantic",
+    "init-db": "npm run db && cd graphql-server && npm run script i d c && cd ..",
+    "init-semantic": "cd client && npm run semantic && cd ..",
     "start-dev": "concurrently -c red,green,blue -n db,sr,cl -p \"[{name}]\" \"npm run db\" \"npm run server\" \"npm run watch-client\" ",
     "server": "nodemon --exec babel-node -- index.js",
     "watch-client": "cd client && npm run watch",

@@ -9,7 +9,7 @@
     "watch": "webpack --colors --watch --no-info --display-error-details",
     "serve": "webpack-dev-server --no-info",
     "build": "webpack",
-    "semantic": "gulp clean build-css build-assets --gulpfile semantic/gulpfile.js"
+    "semantic": "gulp build --silent --gulpfile semantic/gulpfile.js"
   },
   "repository": {
     "type": "git",
