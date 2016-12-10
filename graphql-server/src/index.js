@@ -30,9 +30,9 @@ export default function addGraphQLServer(app, config) {
 
   app.set('json spaces', 2)
 
-  app.use('/api', jwtMiddleware, jsonMiddleware, gqlMiddleware)
+  app.post('/api', jwtMiddleware, jsonMiddleware, gqlMiddleware)
 
-  app.use('/explore', graphiqlExpress({ endpoint: '/api' }))
+  app.get('/explore', graphiqlExpress({ endpoint: '/api' }))
 
   return app
 }

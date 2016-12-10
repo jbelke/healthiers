@@ -8,7 +8,7 @@
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "express-graphiql-toolbox": "0.0.1",
+    "express-graphiql-toolbox": "0.1.0",
     "express-graphql": "^0.6.1",
     "express-jwt": "^5.1.0",
     "generic-pool": "^3.0.0-beta.1",
