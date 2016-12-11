@@ -1,7 +1,6 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const HtmlPlugin = require('html-webpack-plugin')
-const { ProvidePlugin } = require('webpack')
 
 module.exports = {
   entry: './src/main.js',
@@ -22,7 +21,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader')
       },
       {
         test: /\.json$/,
@@ -39,9 +38,6 @@ module.exports = {
   },
   plugins: [
     new ExtractTextPlugin('style.css'),
-    new ProvidePlugin({
-      'React': 'react',
-    }),
     new HtmlPlugin({ template: 'src/index.html' }),
   ],
   devServer: {
