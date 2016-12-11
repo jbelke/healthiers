@@ -1,9 +1,5 @@
 import React from 'react'
 
-export default function AppContainer({ children }) {
-  return (
-    <div>
-      {children}
-    </div>
-  )
-}
+const AppContainer = ({ children }) => <div>{children}</div>
+
+export default AppContainer

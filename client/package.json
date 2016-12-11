@@ -9,6 +9,7 @@
     "watch": "webpack --colors --watch --no-info --display-error-details",
     "serve": "webpack-dev-server --no-info",
     "build": "webpack",
+    "icons": "babel-node src/components/icon/__generate-icons.js",
     "semantic": "gulp build --silent --gulpfile semantic/gulpfile.js"
   },
   "repository": {
@@ -22,7 +23,9 @@
   },
   "homepage": "https://github.com/healthiers/client#readme",
   "dependencies": {
+    "classnames": "^2.2.5",
     "express": "^4.14.0",
+    "font-awesome": "^4.7.0",
     "history": "^2.1.2",
     "postcss-loader": "^1.2.0",
     "react": "^15.3.0",
@@ -48,6 +51,8 @@
     "file-loader": "^0.9.0",
     "html-webpack-plugin": "^2.24.1",
     "json-loader": "^0.5.4",
+    "node-sass": "^4.0.0",
+    "sass-loader": "^4.0.2",
     "serve-static": "^1.11.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
