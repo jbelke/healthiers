@@ -1,0 +1,27 @@
+@mixin typopro($name, $module, $styleName, $weight, $style) {
+  @font-face {
+    font-family: $name;
+    src: url('@typopro/#{$module}/TypoPRO-#{$name}-#{$styleName}.eot');
+    src: url('@typopro/#{$module}/TypoPRO-#{$name}-#{$styleName}.eot?#iefix') format('embedded-opentype'),
+         url('@typopro/#{$module}/TypoPRO-#{$name}-#{$styleName}.woff') format('woff'),
+         url('@typopro/#{$module}/TypoPRO-#{$name}-#{$styleName}.ttf') format('truetype');
+    font-style: $style;
+    font-weight:  $weight;
+    font-stretch: normal;
+    font-variant: normal;
+  }
+}
+
+$raleway: ( 
+  ("Light", 300, "normal"), 
+  ("Regular", 400, "normal"),
+  ("Bold", 700, "normal"),
+);
+
+@each $font in $raleway {
+	$styleName: nth($font, 1);
+	$weight: nth($font, 2);
+  $style: nth($font, 3);
+
+  @include typopro('Raleway', 'web-raleway', $styleName, $weight, $style);
+}
