@@ -1,0 +1,62 @@
+@import '../variables.scss';
+
+.sidebar {
+  width: $sidebar-width-l;
+  height: 100vh;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 2;
+  box-shadow: 0px 0px 8px #999;
+
+  .title {
+    height: $header-height-l;
+    border-bottom: 1px solid lightgray;
+    h1 {
+      margin-left: 12px;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: $font;
+      font-size: $logo-font-size;
+      font-weight: $logo-font-weight;
+      color: $text-color;
+    }
+    i {
+      color: $logo-color
+    }
+  }
+  .menu{
+    margin-top: 10px;
+
+    ul {
+      li {
+        a {
+          font-family: 'Raleway';
+          display: inline-block;
+          line-height: 1.2em;
+          padding: 12px 15px;
+          color: $menu-item-text-color;
+          width: 100%;
+          box-sizing: border-box;
+
+          &:hover {
+            color: $menu-item-marker-color !important;
+            background-color: $menu-item-hover-color;
+            border-left: 3px solid $menu-item-marker-color;
+            padding-left: 12px;
+          };
+
+          &:visited, &:active, &:link {
+            text-decoration: none;
+            color: $menu-item-text-color;
+          }
+
+          i {
+            width: 30px;
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

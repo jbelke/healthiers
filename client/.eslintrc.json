@@ -33,7 +33,6 @@
     "no-empty": "error",
     "no-ex-assign": "error",
     "no-extra-boolean-cast":  "error",
-    "no-extra-parens": "error",
     "no-func-assign": "error",
     "no-var": "error",
     "no-irregular-whitespace": "error",

@@ -1,11 +1,13 @@
 import React from 'react'
 
-import { content, outerContent } from './content'
+import { content, outerContent, header } from './style'
 
-const Content = ({children}) => <div className={outerContent}>
+export const Header = ({children}) => (<div className={header}>
+  {children}
+</div>)
+
+export const Content = ({children}) => (<div className={outerContent}>
   <div className={content}>
     {children}
   </div>
-</div>
-
-export default Content
+</div>)

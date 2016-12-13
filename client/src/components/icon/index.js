@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import iconStyles from './icon'
+import iconStyles from './style'
 
 const Icon = ({name, style, className}) => {
   const iconClass = iconStyles[name]
