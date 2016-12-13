@@ -1,9 +1,11 @@
 import React from 'react'
 
-import { content } from './content'
+import { content, outerContent } from './content'
 
-const Content = ({children}) => <div className={content}>
-  {children}
+const Content = ({children}) => <div className={outerContent}>
+  <div className={content}>
+    {children}
+  </div>
 </div>
 
 export default Content

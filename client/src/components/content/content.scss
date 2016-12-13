@@ -1,5 +1,11 @@
-.content {
-  position: fixed;
-  top: 108px;
-  left: 220px;
+.outerContent {
+  position: absolute;
+  padding: 100px 0px 0px 200px;
+  width: 100%;
+  box-sizing: border-box;
+  .content {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 0px 0px 20px;
+  }
 }

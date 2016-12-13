@@ -4,7 +4,7 @@ import { menu } from './menu.scss'
 
 const Menu = () => <nav className={menu}>
   <ul>
-    <li><a href="#"><Icon name="fileOutline" /> Records</a></li>
+    <li><a href="#"><Icon name="fileOutline" /> My Records</a></li>
     <li><a href="#"><Icon name="envelopeOutline" /> Messages</a></li>
     <li><a href="#"><Icon name="balanceScale" /> Expenses</a></li>
     <br />
