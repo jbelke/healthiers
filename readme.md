@@ -31,14 +31,12 @@ npm install
 cd client && npm install && cd ..
 cd server && npm install && cd ..
 ```
-Now everything should be properly installed, you can start and initialize your database 
-and compile semantic-ui's css (this has to be looked at, semantic handles this horribly, 
-we have a bunch of dependencies checked in as source). 
+Now everything should be properly installed, you can start and initialize your database.
 
 Run this in the root folder:
 
 ```bash
-npm run init
+npm run init-db
 ```
 The app is ready to be run
 
@@ -72,8 +70,6 @@ You can access the running application using
 
 ### client
 * [react](https://facebook.github.io/react/) - for managing the UI
-* [semantic-ui](http://semantic-ui.com/) - to provide a nice looking and stable UI template with us writing minimal css
-* [semantic-ui-react](http://react.semantic-ui.com/) - to combine the above to into react components
 * [redux](http://redux.js.org/) - for predictable state management
 * [redux-observable](https://redux-observable.js.org/) - for predictable sideeffect
 
