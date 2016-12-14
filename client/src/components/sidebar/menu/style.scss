@@ -1,0 +1,35 @@
+@import '../../variables.scss';
+
+.menu{
+  margin-top: 10px;
+
+  ul {
+    li {
+      .menuItem {
+        font-family: 'Raleway';
+        display: inline-block;
+        line-height: 1.2em;
+        padding: 12px 15px;
+        color: $primary-color;
+        width: 100%;
+        box-sizing: border-box;
+
+        &:hover {
+          color: $accent-color !important;
+          border-left: 3px solid $accent-color;
+          padding-left: 12px;
+        };
+
+        &:visited, &:active, &:link {
+          text-decoration: none;
+          color: $primary-color;
+        }
+
+        i {
+          width: 30px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+@import '../variables.scss';
+
+.header {
+  position: absolute;
+  top: 0px;
+  left: $sidebar-width-l;
+  width: calc(100% - #{$sidebar-width-l});
+  height: $header-height-l;
+  border-bottom: 1px solid $muted-color;
+  clear: both;
+}

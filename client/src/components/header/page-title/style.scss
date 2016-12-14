@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+@import '../../utils.scss';
+
+.pageTitle {
+  height: $header-height-l;
+  h2 {
+    @include verticalCenter;
+    margin-left: 12px;
+    font-family: $font;
+    font-size: 1.2em;
+    font-weight: $logo-font-weight;
+    color: $primary-color;
+    float: left;
+  }
+}

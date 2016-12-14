@@ -1,14 +1,10 @@
 $font: 'Raleway';
 $logo-font-size: 1.6em;
 $logo-font-weight: 400;
-$logo-color: #2d89ef;
 
-$text-color: #444;
-
-// Menu
-$menu-item-text-color: #444;
-$menu-item-marker-color: $logo-color;
-$menu-item-hover-color: lighten($logo-color,38%);
+$primary-color: #444;
+$accent-color: #2d89ef;
+$muted-color: lightgray;
 
 $sidebar-width-l: 185px;
-$header-height-l: 60px;
+$header-height-l: 50px;

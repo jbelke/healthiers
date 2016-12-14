@@ -1,6 +1,13 @@
 import React from 'react'
-import { SideBar, Title, Menu, MenuItem, } from '../components/sidebar'
-import { Content, Header } from '../components/content'
+import { SideBar, Title } from '../components/sidebar'
+import { Menu, MenuItem, } from '../components/sidebar/menu'
+import { Content } from '../components/content'
+import { Header } from '../components/header'
+import { PageTitle } from '../components/header/page-title'
+import { Avatar } from '../components/header/avatar'
+
+// TODO change this!
+const defaultProfilePic = 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg'
 
 const AppContainer = ({ children }) => <div>
   <SideBar>
@@ -13,7 +20,11 @@ const AppContainer = ({ children }) => <div>
       <MenuItem icon="hospitalOutline" text="Hospitals" link="#" />
     </Menu>
   </SideBar>
-  <Header> </Header>
+  <Header>
+    <PageTitle title="My Records">
+      <Avatar image={defaultProfilePic} pull="right" />
+    </PageTitle>
+  </Header>
   <Content>{children}</Content>
 </div>
 

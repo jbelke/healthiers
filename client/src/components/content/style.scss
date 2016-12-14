@@ -1,24 +1,14 @@
 @import '../variables.scss';
 
-@mixin push($top, $left) {
-  position: absolute;
-  top: $top;
-  left: $left;
-  width: calc(100% - #{$left});
-}
-
 .outerContent {
-  @include push($header-height-l, $sidebar-width-l);
+  position: absolute;
+  top: $header-height-l;
+  left: $sidebar-width-l;
+  width: calc(100% - #{$sidebar-width-l});
   box-sizing: border-box;
   .content {
     box-sizing: border-box;
     width: 100%;
     padding: 8px 0px 0px 20px;
   }
-}
-
-.header {
-  @include push(0px, $sidebar-width-l);
-  height: 60px;
-  border-bottom: 1px solid lightgray;
 }

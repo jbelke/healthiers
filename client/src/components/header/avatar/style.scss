@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+@import '../../utils.scss';
+
+$avatar-vertical-margin: 5;
+$avatar-size: $header-height-l - ($avatar-vertical-margin * 2);
+
+.pullLeft {
+  float: left
+}
+
+.pullRight {
+  float: right
+}
+
+.avatar {
+  .avatarImage {
+    border: 1px solid $muted-color;
+    height: $avatar-size;
+    width: $avatar-size;
+    border-radius: 50%;
+    margin: #{$avatar-vertical-margin}px;
+    display: inline-block;
+  }
+}
