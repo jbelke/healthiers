@@ -24,6 +24,7 @@
   "homepage": "https://github.com/healthiers/client#readme",
   "dependencies": {
     "@typopro/web-raleway": "^3.4.9",
+    "breakpoint-sass": "^2.7.1",
     "classnames": "^2.2.5",
     "express": "^4.14.0",
     "font-awesome": "^4.7.0",

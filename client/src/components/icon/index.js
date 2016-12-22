@@ -1,14 +1,15 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import iconStyles from './style'
+import iconStyles, { icon } from './style'
 
 const Icon = ({name, style, className}) => {
   const iconClass = iconStyles[name]
   if (!iconClass) {
     throw new Error(`unknown icon ${name}`)
   }
-  return <i className={classNames(iconClass, className)} style={style}></i>
+  const fullClass = classNames(icon, iconClass, className)
+  return <i className={fullClass} style={style}></i>
 }
 
 export default Icon

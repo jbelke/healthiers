@@ -14,8 +14,9 @@ const AppContainer = ({ children }) => <div>
     <Title icon="heartOutline" title="Healthiers" />
     <Menu>
       <MenuItem icon="fileOutline" text="My Records" link="#" />
+      <MenuItem icon="calendar" text="Appointments" link="#" />
       <MenuItem icon="envelopeOutline" text="Messages" link="#" />
-      <MenuItem icon="balanceScale" text="Expenses" link="#" />
+      <MenuItem icon="creditCard" text="Expenses" link="#" />
       <MenuItem icon="userOutline" text="Doctors" link="#" />
       <MenuItem icon="hospitalOutline" text="Hospitals" link="#" />
     </Menu>

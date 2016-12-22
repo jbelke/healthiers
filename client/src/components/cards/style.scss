@@ -1,0 +1,42 @@
+//@import "~susy/sass/susy";
+@import '~breakpoint-sass/stylesheets/breakpoint';
+@import '../variables.scss';
+
+
+$cardColumns: 12;
+
+@mixin cols($cardColumns: $cardColumns, $multiplier: 1) {
+  @for $i from 1 through $cardColumns {
+    $minWidth: min((($i / $cardColumns) * $multiplier), 1);
+    .cardCell#{$i} {
+      flex-grow: $i;
+      flex-shrink: 0;
+      min-width: percentage($minWidth);
+      margin: 7.5px;
+      display: flex;
+    }
+  }
+}
+
+.cardRow {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7.5px; 
+
+  @include cols($cardColumns, 1)
+
+  @include breakpoint(800px 1200px) {
+    @include cols($cardColumns, 2)
+  }
+  
+  @include breakpoint(0px 800px) {
+    @include cols($cardColumns, 10000)
+  }
+
+  .card {
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid $muted-color;
+    box-shadow: 0px 0px 2px #ccc;
+  }
+}
