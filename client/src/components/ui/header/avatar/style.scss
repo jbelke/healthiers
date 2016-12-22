@@ -1,5 +1,5 @@
-@import '../../variables.scss';
-@import '../../utils.scss';
+@import '../../../variables.scss';
+@import '../../../utils.scss';
 
 $avatar-vertical-margin: 5;
 $avatar-size: $header-height-l - ($avatar-vertical-margin * 2);

@@ -9,9 +9,9 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import createStore from './store'
-import AppContainer from './containers/app-container'
-import LoginContainer from './containers/login-container'
-import MainContainer from './containers/main-container'
+import AppContainer from './components'
+import LoginContainer from './components/containers/login-container'
+import MainContainer from './components/containers/main-container'
 
 const store = createStore()
 const history = syncHistoryWithStore(

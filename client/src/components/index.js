@@ -1,15 +1,15 @@
 import React from 'react'
-import { SideBar, Title } from '../components/sidebar'
-import { Menu, MenuItem, } from '../components/sidebar/menu'
-import { Content } from '../components/content'
-import { Header } from '../components/header'
-import { PageTitle } from '../components/header/page-title'
-import { Avatar } from '../components/header/avatar'
+import { SideBar, Title } from './ui/sidebar'
+import { Menu, MenuItem, } from './ui/sidebar/menu'
+import { Content } from './ui/content'
+import { Header } from './ui/header'
+import { PageTitle } from './ui/header/page-title'
+import { Avatar } from './ui/header/avatar'
 
 // TODO change this!
 const defaultProfilePic = 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg'
 
-const AppContainer = ({ children }) => <div>
+const RootComponent = ({ children }) => <div>
   <SideBar>
     <Title icon="heartOutline" title="Healthiers" />
     <Menu>
@@ -29,4 +29,4 @@ const AppContainer = ({ children }) => <div>
   <Content>{children}</Content>
 </div>
 
-export default AppContainer
+export default RootComponent

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Card, CardContainer } from '../components/cards'
+import { Card, CardContainer } from '../ui/cards'
 
 const MainContainer = () => <div>
   <CardContainer>
