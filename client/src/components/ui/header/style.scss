@@ -1,3 +1,4 @@
+@import '~breakpoint-sass/stylesheets/breakpoint';
 @import '../../variables.scss';
 
 .header {
@@ -8,4 +9,9 @@
   height: $header-height-l;
   border-bottom: 1px solid $muted-color;
   clear: both;
+
+  @include breakpoint($breakpoint-s) {
+    left: $sidebar-width-s;
+    width: calc(100% - #{$sidebar-width-s});
+  }
 }

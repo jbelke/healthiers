@@ -1,5 +1,6 @@
 @import '../../variables.scss';
 @import '../../utils.scss';
+@import '~breakpoint-sass/stylesheets/breakpoint';
 
 .sidebar {
   width: $sidebar-width-l;
@@ -19,9 +20,21 @@
       font-size: $logo-font-size;
       font-weight: $logo-font-weight;
       color: $primary-color;
+      .icon {
+        color: $accent-color
+      }
     }
-    i {
-      color: $accent-color
+  }
+
+  @include breakpoint($breakpoint-s) {
+    width: $sidebar-width-s;
+
+    .title {
+      h1 {
+        .text {
+          display: none;
+        }
+      }
     }
   }
 }

@@ -1,10 +1,19 @@
+// font-settings
 $font: 'Raleway';
 $logo-font-size: 1.6em;
 $logo-font-weight: 400;
 
+// colors
 $primary-color: #444;
 $accent-color: #2d89ef;
 $muted-color: lightgray;
 
+// breakpoints
+$breakpoint-s: 0px 800px;
+
+// large screen
 $sidebar-width-l: 185px;
+$sidebar-width-s: 50px;
+
+// small screen
 $header-height-l: 50px;

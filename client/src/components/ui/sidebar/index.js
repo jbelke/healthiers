@@ -1,10 +1,10 @@
 import React from 'react'
-import Icon from '../icon'
-import { sidebar, title as titleClass } from './style'
+import { Icon } from '../icon'
+import { sidebar, title as titleClass, icon as iconClass, text as textClass } from './style'
 
 export const Title = ({title, icon}) => (<div className={titleClass}>
   <h1>
-    <Icon name={icon} /> {title}
+    <Icon className={iconClass} name={icon} /> <span className={textClass}>{title}</span>
   </h1>
 </div>)
 

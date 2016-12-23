@@ -1,4 +1,4 @@
-import 'rxjs'
+//import 'rxjs'
 
 import './components/globals.scss'
 

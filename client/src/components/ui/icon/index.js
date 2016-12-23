@@ -3,7 +3,7 @@ import classNames from 'classnames'
 
 import iconStyles, { icon } from './style'
 
-const Icon = ({name, style, className}) => {
+export const Icon = ({name, style, className}) => {
   const iconClass = iconStyles[name]
   if (!iconClass) {
     throw new Error(`unknown icon ${name}`)
@@ -11,5 +11,3 @@ const Icon = ({name, style, className}) => {
   const fullClass = classNames(icon, iconClass, className)
   return <i className={fullClass} style={style}></i>
 }
-
-export default Icon

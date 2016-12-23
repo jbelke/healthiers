@@ -1,6 +1,6 @@
 import React from 'react'
-import Icon from '../../icon'
-import { menu, menuItem } from './style'
+import { Icon } from '../../icon'
+import { menu, menuItem, icon as iconClass, text as textClass } from './style'
 
 export const Menu = ({children}) => (<nav className={menu}>
   <ul>
@@ -9,5 +9,5 @@ export const Menu = ({children}) => (<nav className={menu}>
 </nav>)
 
 export const MenuItem = ({icon, text, link}) => (<a className={menuItem} href={link}>
-  <Icon name={icon} /> {text}
+  <Icon className={iconClass} name={icon} /> <span className={textClass}>{text}</span>
 </a>)

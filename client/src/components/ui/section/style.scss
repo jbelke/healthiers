@@ -1,0 +1,28 @@
+@import '~breakpoint-sass/stylesheets/breakpoint';
+@import '../../variables.scss';
+
+
+.section {
+  .sectionHeader {
+    .sectionTitle {
+      font-size: 1.3em;
+      font-family: $font;
+      color: $primary-color;
+      display: block;
+    }
+    .sectionNav {
+      display: block;
+      font-family: $font;
+      color: $primary-color;
+    }
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 15px 0px 15px;
+  }
+  .sectionContent {
+    width: 100%;
+  }
+  width: 100%;
+}

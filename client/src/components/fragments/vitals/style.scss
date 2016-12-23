@@ -1,0 +1,49 @@
+@import '../../variables.scss';
+@import '../../utils.scss';
+
+.dataContainer {
+  .vitalsIcon {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.5em;
+  }
+
+  .textContainer {
+    span, input {
+      display: block;
+      font-family: $font;
+      text-align: right;
+    }
+
+    %valueBase {
+      font: 1.3em $font;
+      clear: left;
+    }
+
+    .valueText {
+      @extend %valueBase;
+    }
+    .valueInput {
+      @extend %valueBase;
+      border: none;
+      line-height: 1em;
+      padding: 0px;
+      margin: 0px;
+      outline: none;
+      box-sizing: border-box;
+    }
+  }
+
+  * {
+    color: $primary-color;
+  }
+
+  justify-content: space-between;
+  display: flex;
+  padding: 10px;
+  clear: both;
+  box-sizing: border-box;
+  border-bottom: 1px solid $muted-color;
+}
+

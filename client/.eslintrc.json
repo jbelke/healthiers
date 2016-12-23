@@ -123,7 +123,6 @@
     "no-new-wrappers": "warn",
     "no-loop-func": "warn",
     "no-labels": "warn",
-    "class-methods-use-this": "warn",
     "no-implicit-coercion": "warn"
   }
 }
