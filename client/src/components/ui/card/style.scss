@@ -12,7 +12,7 @@ $cardColumns: 12;
   .cardCell {
     flex-grow: 1;
     width: percentage(1 / $cardColumns);
-    flex-basis: 150px; // TODO
+    flex-basis: 200px; // TODO
     margin: 7.5px;
     display: flex;
   }

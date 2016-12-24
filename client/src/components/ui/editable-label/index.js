@@ -3,6 +3,8 @@ import merge from 'mini-dash/merge'
 import classNames from 'classnames'
 import { autobind } from 'core-decorators'
 
+import { TextField } from '../../ui/text-field'
+
 export class EditableLabel extends React.Component {
   constructor(props) {
     super(props)
@@ -13,8 +15,8 @@ export class EditableLabel extends React.Component {
     }
   }
 
-  @autobind onChange() {
-    this.setState(merge(this.state, { editedText: this.textInput.value }))
+  @autobind onChange(e) {
+    this.setState(merge(this.state, { editedText: e.currentTarget.value }))
   }
 
   @autobind onBlur() {
@@ -35,13 +37,9 @@ export class EditableLabel extends React.Component {
     const {inputClass, labelClass} = this.props
     const {editing, text, editedText} = this.state
     const {onChange, onBlur, onKeyPress, onClick} = this
-    const saveRef = input => {
-      this.textInput = input
-    }
 
     if (editing) {
-      return <input
-        ref={saveRef}
+      return <TextField
         className={classNames(inputClass)}
         type="text"
         value={editedText}

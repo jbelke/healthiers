@@ -3,10 +3,9 @@
 
 .dataContainer {
   .vitalsIcon {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    margin-top: 7px; // TODO how the fuck is it possible to center this vertically???
     font-size: 1.5em;
+    float: left;
   }
 
   .textContainer {
@@ -14,6 +13,7 @@
       display: block;
       font-family: $font;
       text-align: right;
+      width: auto;
     }
 
     %valueBase {
@@ -23,27 +23,25 @@
 
     .valueText {
       @extend %valueBase;
+      margin-bottom: 2px;
     }
     .valueInput {
       @extend %valueBase;
-      border: none;
-      line-height: 1em;
       padding: 0px;
       margin: 0px;
       outline: none;
-      box-sizing: border-box;
+      width: 150px;
     }
+    float: right;
   }
 
   * {
     color: $primary-color;
+    box-sizing: border-box;
   }
 
-  justify-content: space-between;
-  display: flex;
   padding: 10px;
   clear: both;
   box-sizing: border-box;
   border-bottom: 1px solid $muted-color;
 }
-

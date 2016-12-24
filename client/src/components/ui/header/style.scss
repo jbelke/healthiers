@@ -2,13 +2,15 @@
 @import '../../variables.scss';
 
 .header {
-  position: absolute;
+  position: fixed;
   top: 0px;
   left: $sidebar-width-l;
   width: calc(100% - #{$sidebar-width-l});
   height: $header-height-l;
   border-bottom: 1px solid $muted-color;
   clear: both;
+  background-color: transparentize(#fff, .2);
+  z-index: 2;
 
   @include breakpoint($breakpoint-s) {
     left: $sidebar-width-s;

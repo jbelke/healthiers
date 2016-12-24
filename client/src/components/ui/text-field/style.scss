@@ -1,0 +1,12 @@
+@import '../../variables.scss';
+@import '../../utils.scss';
+
+.textField {
+  font-family: $font;
+  color: $primary-color;
+  border: none;
+
+  &:focus {
+    border-bottom: 2px solid $accent-color !important;
+  }
+}
