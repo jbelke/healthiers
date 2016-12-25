@@ -1,4 +1,4 @@
-//import 'rxjs'
+import 'rxjs'
 
 import './components/globals.scss'
 
@@ -13,13 +13,6 @@ import { LandingContainer } from './components/containers/landing-container'
 import { LoginContainer } from './components/containers/login-container'
 import { DashboardContainer } from './components/containers/dashboard-container'
 import { RecordsContainer } from './components/containers/records-container'
-
-import loginQuery from './graphql/queries/login.gql'
-import { client } from './graphql'
-
-client.mutate(loginQuery, { email: 'edesbalazs@gmail.com', password: 'doggoFroggo' })
-  .then(e => console.log(e))
-  .catch(e => console.log(e))
 
 const RootContainer = ({children}) => <div>{children}</div>
 

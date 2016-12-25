@@ -8,7 +8,7 @@
     "server": "nodemon --exec babel-node -- index.js",
     "watch-client": "cd client && npm run watch",
     "build-client": "cd client && npm run build",
-    "db": "cd graphql-server && npm run db-daemon-noadmin",
+    "db": "cd graphql-server && npm run db-noadmin",
     "test-server": "cd graphql-server && npm test && cd ..",
     "test-client": "cd client && npm test && cd ..",
     "test": "npm run test-server && npm run test-client",
