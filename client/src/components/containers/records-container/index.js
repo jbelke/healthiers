@@ -1,5 +1,5 @@
 import React from 'react'
-import { VitalsCard, VitalsSection } from '../fragments/vitals'
+import { VitalsCard, VitalsSection } from '../../fragments/vitals'
 
 const dummyChartData = [
   { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
@@ -11,7 +11,7 @@ const dummyChartData = [
   { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
 ]
 
-const MainContainer = () => <div>
+export const RecordsContainer = () => <div>
   <VitalsSection>
     <VitalsCard name="Height" icon="arrowsV" value="175cm" data={dummyChartData} />
     <VitalsCard name="Weight" icon="balanceScale" value="70kg" data={dummyChartData} />
@@ -20,5 +20,3 @@ const MainContainer = () => <div>
     <VitalsCard name="Blood pressure" icon="barChart" value="125/82" data={dummyChartData} />
   </VitalsSection>
 </div>
-
-export default MainContainer

@@ -1,0 +1,23 @@
+@import '../../variables.scss';
+
+.button {
+  border-radius: 4px;
+  font-family: $font;
+  padding: 6px 30px;
+  text-align: center;
+  outline: none;
+  border: none;
+}
+
+.primary {
+  background-color: $accent-color;
+  color: #fff;
+  &:active {
+    background-color: darken($accent-color, 20);
+  }
+}
+
+.normal {
+  background-color: #fff;
+  border: 1px solid $primary-color;
+}
