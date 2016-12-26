@@ -1,9 +1,13 @@
 import React from 'react'
 import classNames from 'classnames'
-import { button, primary as primaryClass, normal as normalClass } from './style'
+import style, { button } from './style'
 
-export const Button = ({primary, text, className, ...rest}) => {
-  const classes = classNames(button, primary ? primaryClass : normalClass, className)
+export const Button = ({type, text, className, ...rest}) => {
+  if (type && !style[type]) {
+    throw new Error(`Unknown button type ${type}`)
+  }
+  const typeClass = style[type || 'normal']
+  const classes = classNames(button, typeClass, className)
   return <button className={classes} {...rest}>
     {text}
   </button>

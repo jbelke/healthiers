@@ -31,10 +31,35 @@ export class LoginContainer extends React.Component {
     this.props.requestedLogin(email, password)
   }
 
+  buttonText(error, loginInProgress, loginSuccessful) {
+    if (error) {
+      return 'Unsuccessful attempt'
+    } else if (loginInProgress) {
+      return 'Logging you in...'
+    } else if (loginSuccessful) {
+      return 'Logged in'
+    }
+    return 'Login'
+  }
+
+  buttonType(error, loginInProgress, loginSuccessful) {
+    if (error) {
+      return 'error'
+    } else if (loginSuccessful) {
+      return 'success'
+    }
+    return 'primary'
+  }
+
   render() {
     const { email, password } = this.state
-    const loginDisabled = email.length === 0 || password.length === 0
     const { onLoginClick } = this
+    const { error, loginInProgress, loginSuccessful } = this.props.login
+
+    const buttonDisabled = email.length === 0 || password.length === 0 || loginInProgress || error || loginSuccessful
+    const buttonText = this.buttonText(error, loginInProgress, loginSuccessful)
+    const buttonType = this.buttonType(error, loginInProgress, loginSuccessful)
+
     return <div className={pageContainer}>
       <div className={loginContainer}>
         <div className={pageHeader}>
@@ -45,7 +70,7 @@ export class LoginContainer extends React.Component {
         <div className={pageContent}>
           <TextField className={inputField} onChange={linkState(this, 'email')} placeholder='E-mail address' value={email} />
           <TextField className={inputField} onChange={linkState(this, 'password')} type='password' placeholder='Password' value={password} />
-          <Button disabled={loginDisabled} onClick={onLoginClick} className={loginButton} text="Login" primary />
+          <Button disabled={buttonDisabled} onClick={onLoginClick} className={loginButton} text={buttonText} type={buttonType} />
         </div>
       </div>
     </div>

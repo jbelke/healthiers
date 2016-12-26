@@ -15,3 +15,8 @@ export const successfulLogin = token => ({
   type: ActionTypes.SUCCESSFUL_LOGIN,
   payload: { token }
 })
+
+export const clearLogin = token => ({
+  type: ActionTypes.CLEAR_LOGIN,
+  payload: { token }
+})
