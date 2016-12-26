@@ -15,6 +15,9 @@
   &:active {
     background-color: darken($accent-color, 20);
   }
+  &:disabled {
+    background: #bbb;
+  }
 }
 
 .normal {

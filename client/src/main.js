@@ -13,10 +13,11 @@ import { LandingContainer } from './components/containers/landing-container'
 import { LoginContainer } from './components/containers/login-container'
 import { DashboardContainer } from './components/containers/dashboard-container'
 import { RecordsContainer } from './components/containers/records-container'
+import { gql } from './graphql'
 
 const RootContainer = ({children}) => <div>{children}</div>
 
-const store = createStore()
+const store = createStore({ gql })
 const history = syncHistoryWithStore(
   browserHistory,
   store
