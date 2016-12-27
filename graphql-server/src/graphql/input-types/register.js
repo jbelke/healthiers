@@ -1,7 +1,7 @@
 import { GraphQLInputObjectType, GraphQLNonNull } from 'graphql'
 import { GraphQLEmail, GraphQLLimitedString } from 'graphql-custom-types'
 
-export default new GraphQLInputObjectType({
+export const RegisterInput = new GraphQLInputObjectType({
   name: 'RegisterInput',
   fields: {
     password: {

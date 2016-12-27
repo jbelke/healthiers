@@ -5,11 +5,9 @@ import jwtExpress from 'express-jwt'
 import { maskErrors } from 'graphql-errors'
 
 import schema from './graphql/schema'
-import createPool from './database/pool'
+import { createPool, pooled } from './database/pool'
 
 export default function addGraphQLServer(app, config) {
-  const pool = createPool(config.rethinkdb)
-
   maskErrors(schema)
 
   const jsonMiddleware = bodyParser.json()
@@ -22,7 +20,7 @@ export default function addGraphQLServer(app, config) {
   const gqlMiddleware = graphqlExpress(({user}) => ({
     schema,
     context: {
-      pool,
+      pooled: pooled(createPool(config.rethinkdb)),
       config,
       user, // is set by express-jwt
     },

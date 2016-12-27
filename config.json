@@ -22,6 +22,14 @@
         "indices": {
           "email": {}
         }
+      },
+      "vitals": {
+        "config": {
+          "primaryKey": "id"
+        },
+        "indices": {
+          "patientId": {}
+        }
       }
     }
   }

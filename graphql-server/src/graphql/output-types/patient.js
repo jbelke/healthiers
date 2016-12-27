@@ -1,7 +1,9 @@
 import { GraphQLObjectType, GraphQLString, GraphQLID } from 'graphql'
 import { GraphQLEmail } from 'graphql-custom-types'
 
-export default new GraphQLObjectType({
+import { Vitals } from './vitals'
+
+export const Patient = new GraphQLObjectType({
   name: 'Patient',
   fields: () => ({
     id: {
@@ -16,5 +18,8 @@ export default new GraphQLObjectType({
     lastName: {
       type: GraphQLString,
     },
+    vitals: {
+      type: Vitals
+    }
   })
 })

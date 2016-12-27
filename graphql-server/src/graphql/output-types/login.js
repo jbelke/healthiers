@@ -1,6 +1,6 @@
 import { GraphQLObjectType, GraphQLString } from 'graphql'
 
-export default new GraphQLObjectType({
+export const LoginResult = new GraphQLObjectType({
   name: 'LoginResult',
   fields: () => ({
     token: {

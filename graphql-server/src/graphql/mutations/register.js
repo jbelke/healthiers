@@ -1,12 +1,12 @@
-import RegisterInputType from '../input-types/register'
-import PatientOutputType from '../output-types/patient'
+import { RegisterInput } from '../input-types/register'
+import { Patient } from '../output-types/patient'
 import { resolveRegister } from '../resolvers/register'
 
-export default {
-  type: PatientOutputType,
+export const register = {
+  type: Patient,
   args: {
     input: {
-      type: RegisterInputType
+      type: RegisterInput
     }
   },
   resolve: resolveRegister

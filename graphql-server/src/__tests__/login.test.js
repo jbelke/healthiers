@@ -1,10 +1,10 @@
 import { createQuery } from './queries'
 import config, { rethinkdb as dbConfig } from '../../../config-test'
-import createPool from '../database/pool'
+import { createPool, pooled as pooled } from '../database/pool'
 
 describe('register', () => {
   const pool = createPool(dbConfig)
-  const query = createQuery({ request: {}, pool, config, })
+  const query = createQuery({ request: {}, pooled: pooled(pool), config, })
 
   const frank = {
     email: 'papa@franku.com',
@@ -22,7 +22,7 @@ describe('register', () => {
     email: 'papa@franku.com',
     password: 'foo',
   }
-  
+
   const stranger = {
     email: 'this.is@not.registered.com',
     password: 'bad password',

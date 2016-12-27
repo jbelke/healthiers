@@ -33,3 +33,21 @@ export const WeightUnit = new GraphQLEnumType({
     },
   }
 })
+
+export const BloodPressureUnit = new GraphQLEnumType({
+  name: 'BloodPressureUnit',
+  values: {
+    MILLIMETER_OF_MERCURY: {
+      value: 'MILLIMETER_OF_MERCURY'
+    },
+  }
+})
+
+export const PulseUnit = new GraphQLEnumType({
+  name: 'PulseUnit',
+  values: {
+    BEATS_PER_MINUTE: {
+      value: 'BEATS_PER_MINUTE'
+    },
+  }
+})

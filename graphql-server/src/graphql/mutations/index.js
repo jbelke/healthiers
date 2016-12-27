@@ -1,7 +1,7 @@
 import { GraphQLObjectType } from 'graphql'
 
-import login from '../mutations/login'
-import register from '../mutations/register'
+import { login } from '../mutations/login'
+import { register } from '../mutations/register'
 
 export default new GraphQLObjectType({
   name: 'Mutation',

@@ -1,13 +1,13 @@
 import { resolveLogin } from '../resolvers/login'
 
-import LoginOutputType from '../output-types/login'
-import LoginInputType from '../input-types/login'
+import { LoginResult } from '../output-types/login'
+import { LoginInput } from '../input-types/login'
 
-export default {
-  type: LoginOutputType,
+export const login = {
+  type: LoginResult,
   args: {
     input: {
-      type: LoginInputType
+      type: LoginInput
     }
   },
   resolve: resolveLogin

@@ -1,10 +1,10 @@
 import { createQuery } from './queries'
 import config, { rethinkdb as dbConfig } from '../../../config-test'
-import createPool from '../database/pool'
+import { createPool, pooled } from '../database/pool'
 
 describe('register', () => {
   const pool = createPool(dbConfig)
-  const query = createQuery({ request: {}, pool, config, })
+  const query = createQuery({ request: {}, pooled: pooled(pool), config, })
 
   const johnDoe = {
     email: 'john@doe.com',
@@ -17,7 +17,7 @@ describe('register', () => {
     .then(({data, errors}) => {
       expect(errors).toBeUndefined()
       expect(data).toBeDefined()
-      
+
       const {email, firstName, lastName, id} = data.register
 
       expect(email).toBe(johnDoe.email)
