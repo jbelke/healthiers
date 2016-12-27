@@ -16,7 +16,12 @@ export const successfulLogin = token => ({
   payload: { token }
 })
 
-export const clearLogin = token => ({
+export const clearLogin = (...preserveFields) => ({
   type: ActionTypes.CLEAR_LOGIN,
-  payload: { token }
+  payload: preserveFields
+})
+
+export const updateLoginFields = payload => ({
+  payload,
+  type: ActionTypes.UPDATE_LOGIN_FIELD,
 })

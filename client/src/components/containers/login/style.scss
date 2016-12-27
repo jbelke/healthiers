@@ -3,7 +3,7 @@
 @import '../../utils.scss';
 
 .pageContainer {
-  .loginContainer {
+  .container {
     .pageHeader {
       .pageTitle {
         .logo {
@@ -35,7 +35,7 @@
         border-bottom: 2px solid $muted-color;
         width: 100%;
       }
-      .loginButton {
+      .submitButton {
         font-size: 1.4em;
         display: block;
         width: 100%;

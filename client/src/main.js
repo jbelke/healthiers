@@ -9,10 +9,10 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import createStore from './store'
-import { LandingContainer } from './components/containers/landing-container'
-import { LoginContainer } from './components/containers/login-container'
-import { DashboardContainer } from './components/containers/dashboard-container'
-import { RecordsContainer } from './components/containers/records-container'
+import { LandingContainer } from './components/containers/landing'
+import { LoginContainer } from './components/containers/login'
+import { DashboardContainer } from './components/containers/dashboard'
+import { RecordsContainer } from './components/containers/records'
 import { gql } from './graphql'
 
 const RootContainer = ({children}) => <div>{children}</div>

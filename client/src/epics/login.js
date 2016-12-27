@@ -14,5 +14,8 @@ export const fetchLoginToken = (action$, _, { gql }) => action$.ofType(REQUESTED
 export const redirectAfterLogin = action$ => action$.ofType(SUCCESSFUL_LOGIN)
   .flatMap(() => Observable.timer(1000).map(() => push('/dashboard')))
 
-export const clearLogin = action$ => action$.filter(action => action.type === SUCCESSFUL_LOGIN || action.type === FAILED_LOGIN)
+export const clearLoginOnFailure = action$ => action$.ofType(FAILED_LOGIN)
+  .flatMap(() => Observable.timer(1000).map(() => clearLoginAction('email', 'password')))
+
+export const clearLoginOnSuccess = action$ => action$.ofType(SUCCESSFUL_LOGIN)
   .flatMap(() => Observable.timer(1000).map(() => clearLoginAction()))
