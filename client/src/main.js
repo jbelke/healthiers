@@ -9,11 +9,13 @@ import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import createStore from './store'
+import { gql } from './graphql'
+
 import { LandingContainer } from './components/containers/landing'
 import { LoginContainer } from './components/containers/login'
 import { DashboardContainer } from './components/containers/dashboard'
 import { RecordsContainer } from './components/containers/records'
-import { gql } from './graphql'
+import { SignupContainer } from './components/containers/signup'
 
 const RootContainer = ({children}) => <div>{children}</div>
 
@@ -33,6 +35,7 @@ ReactDOM.render(
           <Route path='records' component={RecordsContainer} />
         </Route>
         <Route path='login' component={LoginContainer} />
+        <Route path='signup' component={SignupContainer} />
       </Route>
     </Router>
   </Provider>,

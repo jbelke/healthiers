@@ -1,7 +1,6 @@
 import { push } from 'react-router-redux'
 import { Observable } from 'rxjs'
-import { REQUESTED_LOGIN, SUCCESSFUL_LOGIN, FAILED_LOGIN } from '../actions/types/index'
-import { failedLogin, successfulLogin, clearLogin as clearLoginAction } from '../actions'
+import { REQUESTED_LOGIN, SUCCESSFUL_LOGIN, FAILED_LOGIN, failedLogin, successfulLogin, clearLogin as clearLoginAction } from '../actions/login'
 import loginQuery from '../graphql/queries/login.gql'
 
 export const fetchLoginToken = (action$, _, { gql }) => action$.ofType(REQUESTED_LOGIN)

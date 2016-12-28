@@ -1,8 +1,12 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import { loginReducer } from './login-reducer'
+
+import { loginReducer } from './login'
+import { signupReducer } from './signup'
 
 export default combineReducers({
   routing: routerReducer,
-  login: loginReducer
+  
+  login: loginReducer,
+  signup: signupReducer,
 })
