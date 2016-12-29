@@ -28,7 +28,9 @@
           "primaryKey": "id"
         },
         "indices": {
-          "patientId": {}
+          "patientId": {},
+          "date": {},
+          "type": {}
         }
       }
     }

@@ -1,5 +1,6 @@
 import r from 'rethinkdb'
 import genericPool from 'generic-pool'
+import Bluebird from 'bluebird'
 
 export function createPool({ config, pool }) {
   return genericPool.createPool({
@@ -9,11 +10,8 @@ export function createPool({ config, pool }) {
 }
 
 export function pooled(pool) {
-  return (fn, ...args) => pool.acquire().then(conn => fn(conn, ...args).then(result => {
-    pool.release(conn)
-    return result
-  }).catch(error => {
-    pool.release(conn)
-    throw error
-  }))
+  return (fn, ...args) => pool.acquire().then(
+    connection => Bluebird.resolve(fn(connection, ...args))
+      .finally(() => pool.release(connection))
+  )
 }

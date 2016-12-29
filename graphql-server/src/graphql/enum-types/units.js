@@ -1,6 +1,5 @@
 import { GraphQLEnumType } from 'graphql'
 
-
 export const LengthUnit = new GraphQLEnumType({
   name: 'LengthUnit',
   values: {

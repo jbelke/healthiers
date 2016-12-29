@@ -14,7 +14,6 @@ const epics = combineEpics(
   redirectAfterSignup,
   clearSignupOnSuccess,
   clearSignupOnFailure,
-
 )
 
 export default dependencies => (...args) => epics(...args, dependencies)

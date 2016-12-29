@@ -1,26 +1,16 @@
-import { GraphQLObjectType, GraphQLFloat, GraphQLInt, GraphQLID, GraphQLList, GraphQLNonNull } from 'graphql'
-import { LengthUnit, WeightUnit, BloodPressureUnit, PulseUnit, TemperatureUnit } from './units'
+import { GraphQLObjectType, GraphQLString, GraphQLFloat, GraphQLInt, GraphQLID, GraphQLList, GraphQLNonNull } from 'graphql'
+import { LengthUnit, WeightUnit, BloodPressureUnit, PulseUnit, TemperatureUnit } from '../enum-types/units'
+import { resolveISODate } from '../resolvers/common'
 
-export const HeightRecord = new GraphQLObjectType({
-  name: 'HeightRecord',
+const recordType = (name, valueType, unitType) => new GraphQLObjectType({
+  name,
   fields: () => ({
-    value: {
-      type: GraphQLFloat
-    },
-    unit: {
-      type: LengthUnit
-    }
-  })
-})
-
-export const WeightRecord = new GraphQLObjectType({
-  name: 'WeightRecord',
-  fields: () => ({
-    value: {
-      type: GraphQLFloat
-    },
-    unit: {
-      type: WeightUnit
+    id: { type: GraphQLID },
+    value: { type: valueType },
+    unit: { type: unitType },
+    date: {
+      type: GraphQLString,
+      resolve: resolveISODate('date')
     }
   })
 })
@@ -28,57 +18,20 @@ export const WeightRecord = new GraphQLObjectType({
 export const BloodPressureReading = new GraphQLObjectType({
   name: 'BloodPressureReading',
   fields: () => ({
-    systolic: {
-      type: GraphQLInt
-    },
-    diastolic: {
-      type: GraphQLInt
-    }
+    systolic: { type: GraphQLInt },
+    diastolic: { type: GraphQLInt }
   })
 })
 
-export const BloodPressureRecord = new GraphQLObjectType({
-  name: 'BloodPressureRecord',
-  fields: () => ({
-    value: {
-      type: BloodPressureReading
-    },
-    unit: {
-      type: BloodPressureUnit
-    }
-  })
-})
-
-export const PulseRecord = new GraphQLObjectType({
-  name: 'PulseRecord',
-  fields: () => ({
-    value: {
-      type: GraphQLInt
-    },
-    unit: {
-      type: PulseUnit
-    }
-  })
-})
-
-export const TemperatureRecord = new GraphQLObjectType({
-  name: 'TemperatureRecord',
-  fields: () => ({
-    value: {
-      type: GraphQLFloat
-    },
-    unit: {
-      type: TemperatureUnit
-    }
-  })
-})
+export const HeightRecord = recordType('HeightRecord', GraphQLFloat, LengthUnit)
+export const WeightRecord = recordType('WeightRecord', GraphQLFloat, WeightUnit)
+export const BloodPressureRecord = recordType('BloodPressureRecord', BloodPressureReading, BloodPressureUnit)
+export const PulseRecord = recordType('PulseRecord', GraphQLInt, PulseUnit)
+export const TemperatureRecord = recordType('TemperatureRecord', GraphQLFloat, TemperatureUnit)
 
 export const Vitals = new GraphQLObjectType({
   name: 'Vitals',
   fields: () => ({
-    id: {
-      type: GraphQLID,
-    },
     height: {
       type: new GraphQLNonNull(new GraphQLList(HeightRecord)),
     },

@@ -1,7 +1,7 @@
 import omit from 'mini-dash/omit'
 
 import { compare, sign } from '../../auth'
-import { byEmail } from '../../stores/patient-store'
+import { byEmail } from '../../stores/patient'
 
 export const resolveLogin = (parent, {input}, {pooled, config}) => {
   const {email, password} = input

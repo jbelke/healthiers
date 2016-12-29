@@ -1,4 +1,4 @@
-import { byId } from '../../stores/patient-store'
+import { byId } from '../../stores/patient'
 import { ifLoggedIn } from './utils'
 
 export const resolvePatient = ifLoggedIn(

@@ -3,6 +3,8 @@ import { GraphQLEmail } from 'graphql-custom-types'
 
 import { Vitals } from './vitals'
 
+import { resolveVitals } from '../resolvers/vitals'
+
 export const Patient = new GraphQLObjectType({
   name: 'Patient',
   fields: () => ({
@@ -19,7 +21,8 @@ export const Patient = new GraphQLObjectType({
       type: GraphQLString,
     },
     vitals: {
-      type: Vitals
+      type: Vitals,
+      resolve: resolveVitals
     }
   })
 })

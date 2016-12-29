@@ -6,6 +6,7 @@
   "license": "MIT",
   "dependencies": {
     "bcryptjs": "^2.3.0",
+    "bluebird": "^3.4.7",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-graphiql-toolbox": "0.1.0",
@@ -18,7 +19,7 @@
     "graphql-server-express": "^0.4.3",
     "joi": "^10.0.1",
     "jsonwebtoken": "^7.1.9",
-    "mini-dash": "0.0.2",
+    "mini-dash": "^0.1.1",
     "rethinkdb": "^2.3.3"
   },
   "devDependencies": {

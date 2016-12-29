@@ -1,12 +1,18 @@
 import { GraphQLObjectType } from 'graphql'
 
-import { login } from '../mutations/login'
-import { register } from '../mutations/register'
+import { login } from './login'
+import { register } from './register'
+import { addHeight, addWeight } from './vitals'
 
 export default new GraphQLObjectType({
   name: 'Mutation',
   fields: {
+    // auth
     login,
-    register
+    register,
+
+    // vitals
+    addHeight,
+    addWeight
   }
 })
