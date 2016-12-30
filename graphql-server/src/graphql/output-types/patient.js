@@ -3,7 +3,7 @@ import { GraphQLEmail } from 'graphql-custom-types'
 
 import { Vitals } from './vitals'
 
-import { resolveVitals } from '../resolvers/vitals'
+//import { resolveVitals } from '../resolvers/vitals'
 
 export const Patient = new GraphQLObjectType({
   name: 'Patient',
@@ -22,7 +22,7 @@ export const Patient = new GraphQLObjectType({
     },
     vitals: {
       type: Vitals,
-      resolve: resolveVitals
+      resolve: ({ id }) => ({ patientId: id })
     }
   })
 })

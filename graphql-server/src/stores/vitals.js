@@ -1,6 +1,7 @@
 import r from 'rethinkdb'
 import isDefined from 'mini-dash/isDefined'
 import head from 'mini-dash/head'
+import { augment } from './utils'
 
 const UPDATE_LIMIT = 60 // changes in the last 1 minute will be updates
 const TABLE = 'vitals'
@@ -12,15 +13,28 @@ const objectify = grouped => grouped.reduce((object, { group, reduction }) => {
 
 const firstChange = ({ changes }) => changes[0].new_val
 
-export function vitalsForPatient(connection, patientId, types = []) {
-  return r.table(TABLE)
-    .filter(record => record('patientId').eq(patientId))
-    .filter(record => r.expr(types).contains(record('type')))
-    .group('type')
-    .orderBy(r.desc('date'))
-    .coerceTo('array')
+export function vitalsForPatient(connection, patientId, types = [], args = {}) {
+  const query = augment(
+    r.table(TABLE)
+      .filter(record => record('patientId').eq(patientId))
+      .filter(record => r.expr(types).contains(record('type')))
+      .group('type')
+      .orderBy(r.desc('date')),
+    args
+  )
+  return query.coerceTo('array')
     .run(connection)
     .then(objectify)
+}
+
+export function vitalsOfType(connection, patientId, type, args = {}) {
+  return augment(
+    r.table(TABLE)
+      .filter({ patientId, type })
+      .orderBy(r.desc('date')),
+    args
+  ).coerceTo('array')
+    .run(connection)
 }
 
 export function findById(connection, id) {

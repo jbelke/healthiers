@@ -1,7 +1,7 @@
 import { push } from 'react-router-redux'
 import { Observable } from 'rxjs'
 import { REQUESTED_SIGNUP, SUCCESSFUL_SIGNUP, FAILED_SIGNUP, successfulSignup, failedSignup, clearSignup } from '../actions/signup'
-import signupQuery from '../graphql/queries/register.gql'
+import { signupQuery } from '../graphql/queries/signup'
 
 export const doSignup = (action$, _, { gql }) => action$.ofType(REQUESTED_SIGNUP)
   .map(({ payload }) => payload)

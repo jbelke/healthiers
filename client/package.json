@@ -4,7 +4,7 @@
   "description": "healthiers client",
   "main": "src/index.js",
   "scripts": {
-    "lint": "eslint src/** --config .eslintrc.json --ignore-pattern *.html",
+    "lint": "eslint \"src/**/*.js\" --config .eslintrc.json",
     "test": "node -e \"console.log('Client tests are coming soon...')\"",
     "watch": "webpack --colors --watch --no-info --display-error-details",
     "serve": "webpack-dev-server --no-info",

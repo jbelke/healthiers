@@ -1,6 +1,5 @@
-import { addVitals, vitalsForPatient } from '../../stores/vitals'
-import { ifLoggedIn, selection } from './utils'
-import merge from 'mini-dash/merge'
+import { addVitals, vitalsOfType } from '../../stores/vitals'
+import { ifLoggedIn } from './utils'
 
 const createResolver = type => ifLoggedIn(
   (_, {input}, {pooled, user}) => {
@@ -10,19 +9,12 @@ const createResolver = type => ifLoggedIn(
   }
 )
 
-const defaultVitals = types => types.reduce((obj, type) => {
-  obj[type] = []
-  return obj
-}, {})
-
 export const resolveAddWeight = createResolver('weight')
 export const resolveAddHeight = createResolver('height')
 export const resolveAddPulse = createResolver('pulse')
 export const resolveAddTemperature = createResolver('temperature')
 export const resolveAddBloodPressure = createResolver('bloodPressure')
 
-export const resolveVitals = ({id}, _, {pooled}, info) => {
-  const types = selection(info)
-  return pooled(conn => vitalsForPatient(conn, id, types))
-    .then(vitals => merge(defaultVitals(types), vitals))
+export function resolveVitalsOfType(type) {
+  return ({patientId}, _, {pooled}) => pooled(conn => vitalsOfType(conn, patientId, type, {}))
 }

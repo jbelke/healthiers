@@ -4,7 +4,7 @@
   "description": "Healthiers main repo",
   "scripts": {
     "init-db": "npm run db && cd graphql-server && npm run script i d c && cd ..",
-    "start-dev": "concurrently -c red,green,blue -n db,sr,cl -p \"[{name}]\" \"npm run db\" \"npm run server\" \"npm run watch-client\" ",
+    "start": "concurrently -c red,green,blue -n db,sr,cl -p \"[{name}]\" \"npm run db\" \"npm run server\" \"npm run watch-client\" ",
     "server": "nodemon --exec babel-node -- index.js",
     "watch-client": "cd client && npm run watch",
     "build-client": "cd client && npm run build",

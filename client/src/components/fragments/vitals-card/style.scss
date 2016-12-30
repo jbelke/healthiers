@@ -35,6 +35,10 @@
     float: right;
   }
 
+  .graphContainer {
+    height: 60px;
+  }
+
   * {
     color: $primary-color;
     box-sizing: border-box;
@@ -44,4 +48,15 @@
   clear: both;
   box-sizing: border-box;
   border-bottom: 1px solid $muted-color;
+}
+
+// TODO for some reason styles are not applied if this is in .graphContainer
+.noDataText { 
+  height: 60px;
+  line-height: 60px;
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+  font-family: $font;
+  color: $primary-color;
 }

@@ -1,6 +1,7 @@
 import { GraphQLObjectType, GraphQLString, GraphQLFloat, GraphQLInt, GraphQLID, GraphQLList, GraphQLNonNull } from 'graphql'
 import { LengthUnit, WeightUnit, BloodPressureUnit, PulseUnit, TemperatureUnit } from '../enum-types/units'
 import { resolveISODate } from '../resolvers/common'
+import { resolveVitalsOfType } from '../resolvers/vitals'
 
 const recordType = (name, valueType, unitType) => new GraphQLObjectType({
   name,
@@ -26,18 +27,23 @@ export const Vitals = new GraphQLObjectType({
   fields: () => ({
     height: {
       type: new GraphQLNonNull(new GraphQLList(HeightRecord)),
+      resolve: resolveVitalsOfType('height')
     },
     weight: {
       type: new GraphQLNonNull(new GraphQLList(WeightRecord)),
+      resolve: resolveVitalsOfType('weight')
     },
     pulse: {
       type: new GraphQLNonNull(new GraphQLList(PulseRecord)),
+      resolve: resolveVitalsOfType('pulse')
     },
     bloodPressure: {
       type: new GraphQLNonNull(new GraphQLList(BloodPressureRecord)),
+      resolve: resolveVitalsOfType('bloodPressure')
     },
     temperature: {
       type: new GraphQLNonNull(new GraphQLList(TemperatureRecord)),
+      resolve: resolveVitalsOfType('temperature')
     }
   })
 })
