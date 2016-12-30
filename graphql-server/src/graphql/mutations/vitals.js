@@ -1,6 +1,6 @@
-import { HeightInput, WeightInput } from '../input-types/vitals'
-import { HeightRecord, WeightRecord } from '../output-types/vitals'
-import { mutations } from '../resolvers/vitals'
+import { HeightInput, WeightInput, BloodPressureInput, PulseInput, TemperatureInput } from '../input-types/vitals'
+import { HeightRecord, WeightRecord, BloodPressureRecord, PulseRecord, TemperatureRecord } from '../output-types/vitals'
+import { resolveAddHeight, resolveAddWeight, resolveAddPulse, resolveAddTemperature, resolveAddBloodPressure } from '../resolvers/vitals'
 
 export const addHeight = {
   type: HeightRecord,
@@ -9,7 +9,7 @@ export const addHeight = {
       type: HeightInput
     }
   },
-  resolve: mutations.addHeight
+  resolve: resolveAddHeight
 }
 
 export const addWeight = {
@@ -19,5 +19,35 @@ export const addWeight = {
       type: WeightInput
     }
   },
-  resolve: mutations.addWeight
+  resolve: resolveAddWeight
+}
+
+export const addPulse = {
+  type: PulseRecord,
+  args: {
+    input: {
+      type: PulseInput
+    }
+  },
+  resolve: resolveAddPulse
+}
+
+export const addBloodPressure = {
+  type: BloodPressureRecord,
+  args: {
+    input: {
+      type: BloodPressureInput
+    }
+  },
+  resolve: resolveAddBloodPressure
+}
+
+export const addTemperature = {
+  type: TemperatureRecord,
+  args: {
+    input: {
+      type: TemperatureInput
+    }
+  },
+  resolve: resolveAddTemperature
 }

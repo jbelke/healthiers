@@ -15,17 +15,9 @@ const recordType = (name, valueType, unitType) => new GraphQLObjectType({
   })
 })
 
-export const BloodPressureReading = new GraphQLObjectType({
-  name: 'BloodPressureReading',
-  fields: () => ({
-    systolic: { type: GraphQLInt },
-    diastolic: { type: GraphQLInt }
-  })
-})
-
 export const HeightRecord = recordType('HeightRecord', GraphQLFloat, LengthUnit)
 export const WeightRecord = recordType('WeightRecord', GraphQLFloat, WeightUnit)
-export const BloodPressureRecord = recordType('BloodPressureRecord', BloodPressureReading, BloodPressureUnit)
+export const BloodPressureRecord = recordType('BloodPressureRecord', GraphQLString, BloodPressureUnit)
 export const PulseRecord = recordType('PulseRecord', GraphQLInt, PulseUnit)
 export const TemperatureRecord = recordType('TemperatureRecord', GraphQLFloat, TemperatureUnit)
 

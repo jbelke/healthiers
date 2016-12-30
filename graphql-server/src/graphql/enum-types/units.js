@@ -6,9 +6,6 @@ export const LengthUnit = new GraphQLEnumType({
     CENTIMETRES: {
       value: 'CENTIMETRES'
     },
-    MILLIMETRES: {
-      value: 'MILLIMETRES'
-    }
   }
 })
 
@@ -17,16 +14,13 @@ export const TemperatureUnit = new GraphQLEnumType({
   values: {
     CELSIUS: {
       value: 'CELSIUS'
-    }
+    },
   }
 })
 
 export const WeightUnit = new GraphQLEnumType({
   name: 'WeightUnit',
   values: {
-    GRAMMS: {
-      value: 'GRAMMS'
-    },
     KILOGRAMMS: {
       value: 'KILOGRAMMS'
     },

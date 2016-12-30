@@ -2,7 +2,7 @@ import { GraphQLObjectType } from 'graphql'
 
 import { login } from './login'
 import { register } from './register'
-import { addHeight, addWeight } from './vitals'
+import { addHeight, addWeight, addBloodPressure, addPulse, addTemperature } from './vitals'
 
 export default new GraphQLObjectType({
   name: 'Mutation',
@@ -13,6 +13,9 @@ export default new GraphQLObjectType({
 
     // vitals
     addHeight,
-    addWeight
+    addWeight,
+    addBloodPressure,
+    addPulse,
+    addTemperature
   }
 })

@@ -1,26 +1,16 @@
-import { GraphQLInputObjectType, GraphQLNonNull, GraphQLFloat, GraphQLInt } from 'graphql'
-import { LengthUnit, WeightUnit, /*BloodPressureUnit, PulseUnit, TemperatureUnit */ } from '../enum-types/units'
+import { GraphQLInputObjectType, GraphQLNonNull, GraphQLFloat, GraphQLInt, GraphQLString } from 'graphql'
+import { LengthUnit, WeightUnit, BloodPressureUnit, PulseUnit, TemperatureUnit } from '../enum-types/units'
 
-export const HeightInput = new GraphQLInputObjectType({
-  name: 'HeightInput',
+const createInputType = (name, valueType, unitType) => new GraphQLInputObjectType({
+  name,
   fields: () => ({
-    value: {
-      type: new GraphQLNonNull(GraphQLFloat)
-    },
-    unit: {
-      type: new GraphQLNonNull(LengthUnit)
-    }
+    value: { type: new GraphQLNonNull(valueType) },
+    unit: { type: new GraphQLNonNull(unitType) }
   })
 })
 
-export const WeightInput = new GraphQLInputObjectType({
-  name: 'WeightInput',
-  fields: () => ({
-    value: {
-      type: new GraphQLNonNull(GraphQLInt)
-    },
-    unit: {
-      type: new GraphQLNonNull(WeightUnit)
-    }
-  })
-})
+export const HeightInput = createInputType('HeightInput', GraphQLFloat, LengthUnit)
+export const WeightInput = createInputType('WeightInput', GraphQLFloat, WeightUnit)
+export const BloodPressureInput = createInputType('BloodPressureInput', GraphQLString, BloodPressureUnit)
+export const PulseInput = createInputType('PulseInput', GraphQLInt, PulseUnit)
+export const TemperatureInput = createInputType('TemperatureInput', GraphQLFloat, TemperatureUnit)

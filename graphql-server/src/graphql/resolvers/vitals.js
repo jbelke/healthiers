@@ -15,10 +15,11 @@ const defaultVitals = types => types.reduce((obj, type) => {
   return obj
 }, {})
 
-export const mutations = {
-  addWeight: createResolver('weight'),
-  addHeight: createResolver('height')
-}
+export const resolveAddWeight = createResolver('weight')
+export const resolveAddHeight = createResolver('height')
+export const resolveAddPulse = createResolver('pulse')
+export const resolveAddTemperature = createResolver('temperature')
+export const resolveAddBloodPressure = createResolver('bloodPressure')
 
 export const resolveVitals = ({id}, _, {pooled}, info) => {
   const types = selection(info)
