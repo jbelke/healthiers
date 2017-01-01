@@ -22,5 +22,44 @@ export const vitalsQuery = fragments => `query VitalsForPatient {
     }
   }
 }
-
 ${ fragments.map(name => _fragments[name]).join('\n')}`
+
+export const addWeight = `mutation addWeight($input:WeightInput!){
+  addWeight(input: $input) {
+    id
+  }
+}`
+
+export const addHeight = `mutation addHeight($input:HeightInput!){
+  addHeight(input: $input) {
+    id
+  }
+}`
+
+export const addBloodPressure = `mutation addBloodPressure($input:BloodPressureInput!){
+  addBloodPressure(input: $input) {
+    id
+  }
+}`
+
+export const addPulse = `mutation addPulse($input:PulseInput!){
+  addPulse(input: $input) {
+    id
+  }
+}`
+
+export const addTemperature = `mutation addTemperature($input:TemperatureInput!){
+  addTemperature(input: $input) {
+    id
+  }
+}`
+
+const _adders = {
+  weight: addWeight,
+  height: addHeight,
+  bloodPressure: addBloodPressure,
+  temperature: addTemperature,
+  pulse: addPulse
+}
+
+export const addVitalsQuery = type => _adders[type]
