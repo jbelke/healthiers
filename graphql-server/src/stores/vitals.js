@@ -19,7 +19,7 @@ export function vitalsForPatient(connection, patientId, types = [], args = {}) {
       .filter(record => record('patientId').eq(patientId))
       .filter(record => r.expr(types).contains(record('type')))
       .group('type')
-      .orderBy(r.desc('date')),
+      .orderBy(r.asc('date')),
     args
   )
   return query.coerceTo('array')
@@ -31,7 +31,7 @@ export function vitalsOfType(connection, patientId, type, args = {}) {
   return augment(
     r.table(TABLE)
       .filter({ patientId, type })
-      .orderBy(r.desc('date')),
+      .orderBy(r.asc('date')),
     args
   ).coerceTo('array')
     .run(connection)
