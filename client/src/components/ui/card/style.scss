@@ -1,7 +1,7 @@
 @import '~breakpoint-sass/stylesheets/breakpoint';
 @import '../../variables.scss';
 
-$cardColumns: 12;
+$cardColumns: 6;
 
 .cardRow {
   display: flex;
@@ -15,6 +15,7 @@ $cardColumns: 12;
     flex-basis: 200px; // TODO
     margin: 7.5px;
     display: flex;
+    min-width: 0;
   }
 
   .card {

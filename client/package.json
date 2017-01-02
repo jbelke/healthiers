@@ -40,6 +40,7 @@
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",
     "react-router-redux": "^4.0.5",
+    "recharts": "^0.20.1",
     "redux": "^3.5.2",
     "redux-observable": "^0.12.2",
     "reset-css": "^2.2.0",
