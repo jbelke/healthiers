@@ -2,14 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { autobind } from 'core-decorators'
 
-import { requestedSignup, updateSignupFields } from '../../../actions/signup'
+import { requestedSignup, updateLocalSignup } from '../../../actions/signup'
 
 import { TextField } from '../../ui/text-field'
 import { Button } from '../../ui/button'
 import { FullPageContainer, FormContainer, FormHeader, FormContent } from '../../fragments/auth-forms'
 
 const mapStateToProps = ({ signup }) => ({ signup })
-const mapDispatchToProps = { requestedSignup, updateSignupFields }
+const mapDispatchToProps = { requestedSignup, updateLocalSignup }
 
 @connect(mapStateToProps, mapDispatchToProps)
 export class SignupContainer extends React.Component {
@@ -66,23 +66,23 @@ export class SignupContainer extends React.Component {
   }
 
   @autobind() updateEmail(event) {
-    this.props.updateSignupFields({ email: event.target.value })
+    this.props.updateLocalSignup({ email: event.target.value })
   }
 
   @autobind() updateFirstName(event) {
-    this.props.updateSignupFields({ firstName: event.target.value })
+    this.props.updateLocalSignup({ firstName: event.target.value })
   }
 
   @autobind() updateLastName(event) {
-    this.props.updateSignupFields({ lastName: event.target.value })
+    this.props.updateLocalSignup({ lastName: event.target.value })
   }
 
   @autobind() updatePassword(event) {
-    this.props.updateSignupFields({ password: event.target.value })
+    this.props.updateLocalSignup({ password: event.target.value })
   }
 
   @autobind() updatePasswordRepeat(event) {
-    this.props.updateSignupFields({ passwordRepeat: event.target.value })
+    this.props.updateLocalSignup({ passwordRepeat: event.target.value })
   }
 
   render() {

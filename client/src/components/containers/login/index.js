@@ -2,14 +2,14 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { autobind } from 'core-decorators'
 
-import { requestedLogin, updateLoginFields } from '../../../actions/login'
+import { requestedLogin, updateLocalLogin } from '../../../actions/login'
 
 import { TextField } from '../../ui/text-field'
 import { Button } from '../../ui/button'
 import { FullPageContainer, FormContainer, FormHeader, FormContent } from '../../fragments/auth-forms'
 
 const mapStateToProps = ({ login }) => ({ login })
-const mapDispatchToProps = { requestedLogin, updateLoginFields }
+const mapDispatchToProps = { requestedLogin, updateLocalLogin }
 
 @connect(mapStateToProps, mapDispatchToProps)
 export class LoginContainer extends React.Component {
@@ -44,11 +44,11 @@ export class LoginContainer extends React.Component {
   }
 
   @autobind updateEmail(event) {
-    this.props.updateLoginFields({ email: event.target.value })
+    this.props.updateLocalLogin({ email: event.target.value })
   }
 
   @autobind updatePassword(event) {
-    this.props.updateLoginFields({ password: event.target.value })
+    this.props.updateLocalLogin({ password: event.target.value })
   }
 
   render() {

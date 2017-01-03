@@ -2,52 +2,71 @@
 @import '../../utils.scss';
 
 .dataContainer {
-  .vitalsIcon {
-    margin-top: 7px; // TODO how the fuck is it possible to center this vertically???
-    font-size: 1.5em;
-    float: left;
+  display: flex;
+  border-bottom: 1px solid $muted-color;
+
+  .left {
+    display: flex;
+    flex-shrink: 1;
+    vertical-align: middle;
+    .vitalsIcon {
+      padding: 8px;
+      font-size: 1.5em;
+      margin-top: 13px;
+      color: $primary-color;
+    }
   }
 
-  .textContainer {
-    span, input {
-      display: block;
+  .right {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 10px 10px 5px 10px;
+
+    .title {
+      font-size: 1em;
       font-family: $font;
       text-align: right;
-      width: auto;
+      display: block;
+      margin-bottom: 5px;
+      color: $primary-color;
     }
 
-    %valueBase {
-      font: 1.3em $font;
-      clear: left;
-    }
+    .editorContainer {
+      display: flex;
+      min-width: 1px;
 
-    .valueText {
-      @extend %valueBase;
-      margin-bottom: 2px;
+      .valueEditor {
+        flex-grow: 1;
+        margin-right: 3px;
+
+        .textEditor {
+          text-align: right;
+          width: 100%;
+          font: 1.3em $font;
+          color: $primary-color;
+          outline: none;
+          border: none;
+          border-bottom: 2px solid transparent;
+          transition: border-color 0.2s ease;
+          min-width: 1px;
+          box-sizing: border-box;
+
+          &:focus {
+            border-bottom: 2px solid $accent-color;
+          }
+        }
+      }
+      
+      .unitText {
+        flex-shrink: 1;
+        display: block;
+        font: 1.3em $font;
+        margin-bottom: 2px;
+      }
     }
-    .valueInput {
-      @extend %valueBase;
-      padding: 0px;
-      margin: 0px;
-      outline: none;
-      width: 150px;
-    }
-    float: right;
   }
-
-  .graphContainer {
-    height: 60px;
-  }
-
-  * {
-    color: $primary-color;
-    box-sizing: border-box;
-  }
-
-  padding: 10px;
-  clear: both;
-  box-sizing: border-box;
-  border-bottom: 1px solid $muted-color;
 }
 
 .tooltipContainer {
@@ -69,6 +88,13 @@
     color: #777;
   }
 }
+
+.bottom {
+  display: flex;
+  flex-grow: 1;
+  height: 68px;
+}
+
 
 // TODO for some reason styles are not applied if this is in .graphContainer
 .noDataText { 

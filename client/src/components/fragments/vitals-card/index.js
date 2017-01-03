@@ -8,8 +8,9 @@ import { Card } from '../../ui/card'
 import { Icon } from '../../ui/icon'
 
 import {
-  dataContainer, graphContainer, vitalsIcon, textContainer, valueText,
-  noDataText, tooltipContainer, tooltipValue, tooltipDate
+  dataContainer, left, right, bottom,
+  vitalsIcon, title, editorContainer, valueEditor, unitText, textEditor,
+  tooltipContainer, tooltipValue, tooltipDate, noDataText
 } from './style'
 
 const unitNames = {
@@ -24,7 +25,6 @@ const stringify = ({value, unit}) => (isDefined(value) && isDefined(unit)) ? `${
 
 const VitalsTooltip = ({active, payload}) => {
   if (active) {
-
     const data = payload[0].payload
     const valueString = stringify(data)
     const dateString = formatDate(new Date(data.date), 'YYYY.MM.DD')
@@ -39,7 +39,7 @@ const VitalsTooltip = ({active, payload}) => {
 
 const NoChart = () => (<div className={noDataText}>No data</div>)
 
-const VitalsChart = ({data}) => (<ResponsiveContainer height={60}>
+const VitalsChart = ({data}) => (<ResponsiveContainer height={68}>
   <LineChart data={data} >
     <YAxis type='number' dataKey='value' domain={['dataMin', 'dataMax']} hide />
     <Line type="monotone" dataKey="value" stroke="#666" />
@@ -48,18 +48,26 @@ const VitalsChart = ({data}) => (<ResponsiveContainer height={60}>
 </ResponsiveContainer>)
 
 export const VitalsCard = ({icon, name, data}) => {
-  const text = stringify(last(data) || {})
-  return <Card columns={1}>
+  const lastData = last(data) || {}
+  const {unit = '', value = ''} = lastData
+
+  return <Card>
     <div className={dataContainer}>
-      <Icon className={vitalsIcon} name={icon} />
-      <div className={textContainer}>
-        <span>{name}</span>
-        <span className={valueText}>{text}</span>
+      <div className={left}>
+        <Icon className={vitalsIcon} name={icon} />
       </div>
-      <div style={{ clear: 'both' }}></div>
+      <div className={right}>
+        <span className={title}>{name}</span>
+        <div className={editorContainer}>
+          <div type='text' className={valueEditor}>
+            <input className={textEditor} type='text' value={value} />
+          </div>
+          <span className={unitText}>{unitNames[unit]}</span>
+        </div>
+      </div>
     </div>
-    <div className={graphContainer}>
-      {data && data.length ? <VitalsChart data={data} /> : <NoChart />}
+    <div className={bottom}>
+      {(data && data.length) ? (<VitalsChart data={data} />) : (<NoChart />)}
     </div>
   </Card>
 }

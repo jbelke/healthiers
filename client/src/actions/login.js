@@ -2,7 +2,7 @@ export const REQUESTED_LOGIN = 'REQUESTED_LOGIN'
 export const FAILED_LOGIN = 'FAILED_LOGIN'
 export const SUCCESSFUL_LOGIN = 'SUCCESSFUL_LOGIN'
 export const CLEAR_LOGIN = 'CLEAR_LOGIN'
-export const UPDATE_LOGIN = 'UPDATE_LOGIN_FIELD'
+export const UPDATE_LOCAL_LOGIN = 'UPDATE_LOCAL_LOGIN'
 
 export const requestedLogin = payload => ({
   type: REQUESTED_LOGIN,
@@ -24,7 +24,7 @@ export const clearLogin = (...preserveFields) => ({
   payload: preserveFields
 })
 
-export const updateLoginFields = payload => ({
+export const updateLocalLogin = payload => ({
   payload,
-  type: UPDATE_LOGIN,
+  type: UPDATE_LOCAL_LOGIN,
 })

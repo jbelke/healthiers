@@ -2,7 +2,7 @@ export const REQUESTED_SIGNUP = 'REQUESTED_SIGNUP'
 export const FAILED_SIGNUP = 'FAILED_SIGNUP'
 export const SUCCESSFUL_SIGNUP = 'SUCCESSFUL_SIGNUP'
 export const CLEAR_SIGNUP = 'CLEAR_SIGNUP'
-export const UPDATE_SIGNUP = 'UPDATE_SIGNUP_FIELD'
+export const UPDATE_LOCAL_SIGNUP = 'UPDATE_SIGNUP_FIELD'
 
 export const requestedSignup = payload => ({
   type: REQUESTED_SIGNUP,
@@ -23,7 +23,7 @@ export const clearSignup = (...preserveFields) => ({
   payload: preserveFields
 })
 
-export const updateSignupFields = payload => ({
+export const updateLocalSignup = payload => ({
   payload,
-  type: UPDATE_SIGNUP,
+  type: UPDATE_LOCAL_SIGNUP,
 })
