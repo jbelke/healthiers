@@ -6,29 +6,38 @@
 
   ul {
     li {
-      .menuItem {
-        font-family: 'Raleway';
-        display: inline-block;
-        line-height: 1.2em;
-        padding: 12px 15px;
-        color: $primary-color;
-        width: 100%;
-        box-sizing: border-box;
+      a {
+        .menuItem {
+          font-family: 'Raleway';
+          display: inline-block;
+          line-height: 1.2em;
+          padding: 12px 15px;
+          color: $primary-color;
+          width: 100%;
+          box-sizing: border-box;
 
-        &:hover {
+          &:hover {
+            color: $accent-color !important;
+            border-left: 3px solid $accent-color;
+            padding-left: 12px;
+          };
+
+          &:visited, &:active, &:link {
+            text-decoration: none;
+            color: $primary-color;
+          }
+
+          .icon {
+            width: 30px;
+            display: inline-block;
+          }
+        }
+      }
+      .activeMenuItem {
+        .menuItem {
           color: $accent-color !important;
           border-left: 3px solid $accent-color;
           padding-left: 12px;
-        };
-
-        &:visited, &:active, &:link {
-          text-decoration: none;
-          color: $primary-color;
-        }
-
-        .icon {
-          width: 30px;
-          display: inline-block;
         }
       }
     }

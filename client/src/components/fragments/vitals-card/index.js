@@ -1,7 +1,9 @@
 import React from 'react'
 import last from 'mini-dash/last'
 import isDefined from 'mini-dash/isDefined'
+import isFunction from 'mini-dash/isFunction'
 import formatDate from 'date-fns/format'
+import { autobind } from 'core-decorators'
 import { ResponsiveContainer, LineChart, Line, Tooltip, YAxis } from 'recharts'
 
 import { Card } from '../../ui/card'
@@ -13,7 +15,7 @@ import {
   tooltipContainer, tooltipValue, tooltipDate, noDataText
 } from './style'
 
-const unitNames = {
+const UNIT_SHORTS = {
   CENTIMETRES: 'cm',
   KILOGRAMMS: 'kg',
   CELSIUS: '°C',
@@ -21,7 +23,7 @@ const unitNames = {
   MILLIMETER_OF_MERCURY: 'mmHg'
 }
 
-const stringify = ({value, unit}) => (isDefined(value) && isDefined(unit)) ? `${value}${unitNames[unit]}` : 'No data'
+const stringify = ({value, unit}) => (isDefined(value) && isDefined(unit)) ? `${value}${UNIT_SHORTS[unit]}` : 'No data'
 
 const VitalsTooltip = ({active, payload}) => {
   if (active) {
@@ -47,9 +49,20 @@ const VitalsChart = ({data}) => (<ResponsiveContainer height={68}>
   </LineChart>
 </ResponsiveContainer>)
 
-export const VitalsCard = ({icon, name, data}) => {
-  const lastData = last(data) || {}
-  const {unit = '', value = ''} = lastData
+const noop = () => { /* noop */ }
+
+export const VitalsCard = ({data, icon, name, latest = {}, valueChange = noop, valueCommit = noop }) => {
+
+  const {value = '', unit = ''} = latest
+
+  const _onKeyPress = e => {
+    if (e.key === 'Enter') {
+      valueCommit(e.target.value)
+      e.target.blur()
+    }
+  }
+
+  const _onChange = e => valueChange(e.target.value)
 
   return <Card>
     <div className={dataContainer}>
@@ -60,9 +73,15 @@ export const VitalsCard = ({icon, name, data}) => {
         <span className={title}>{name}</span>
         <div className={editorContainer}>
           <div type='text' className={valueEditor}>
-            <input className={textEditor} type='text' value={value} />
+            <input
+              value={value}
+              type='text'
+              placeholder={`...`}
+              className={textEditor}
+              onKeyPress={_onKeyPress}
+              onChange={_onChange} />
           </div>
-          <span className={unitText}>{unitNames[unit]}</span>
+          <span className={unitText}>{UNIT_SHORTS[unit]}</span>
         </div>
       </div>
     </div>

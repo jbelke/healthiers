@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { requestFetchVitals } from '../../../actions/vitals'
 import { Section, SectionContent, SectionHeader } from '../../ui/section'
 import { CardContainer } from '../../ui/card'
-import { VitalsCard } from '../../fragments/vitals-card'
+import { VitalsCardContainer } from '../vitals-card'
 
 const mapStateToProps = ({ vitals }) => ({ vitals })
 const mapDispatchToProps = { requestFetchVitals }
@@ -16,16 +16,15 @@ export class VitalsContainer extends React.Component {
   }
 
   render() {
-    const { height = [], weight = [], temperature = [], pulse = [], bloodPressure = []} = this.props.vitals
     return <Section>
       <SectionHeader title="Vitals" />
       <SectionContent>
         <CardContainer>
-          <VitalsCard name="Height" icon="arrowsV" data={height} />
-          <VitalsCard name="Weight" icon="balanceScale" data={weight} />
-          <VitalsCard name="Temperature" icon="thermometerHalf" data={temperature} />
-          <VitalsCard name="Pulse" icon="heartbeat" data={pulse} />
-          <VitalsCard name="Blood pressure" icon="barChart" data={bloodPressure} />
+          <VitalsCardContainer name="Height" icon="arrowsV" vitalsKey='height' />
+          <VitalsCardContainer name="Weight" icon="balanceScale" vitalsKey='weight' />
+          <VitalsCardContainer name="Temperature" icon="thermometerHalf" vitalsKey='temperature' />
+          <VitalsCardContainer name="Pulse" icon="heartbeat" vitalsKey='pulse' />
+          <VitalsCardContainer name="Blood pressure" icon="barChart" vitalsKey='bloodPressure' />
         </CardContainer>
       </SectionContent>
     </Section>

@@ -14,12 +14,11 @@ export const DashboardContainer = ({ children }) => <div>
   <SideBar>
     <Title icon="heartOutline" title="Healthiers" />
     <Menu>
-      <MenuItem icon="fileOutline" text="My Records" link="#" />
-      <MenuItem icon="calendar" text="Appointments" link="#" />
-      <MenuItem icon="envelopeOutline" text="Messages" link="#" />
-      <MenuItem icon="creditCard" text="Expenses" link="#" />
-      <MenuItem icon="userOutline" text="Doctors" link="#" />
-      <MenuItem icon="hospitalOutline" text="Hospitals" link="#" />
+      <MenuItem icon="fileOutline" text="My Records" link="/dashboard/records" />
+      <MenuItem icon="envelopeOutline" text="Messages" link="/dashboard/messages" />
+      <MenuItem icon="creditCard" text="Expenses" link="/dashboard/expenses" />
+      <MenuItem icon="userOutline" text="Doctors" link="/dashboard/doctors" />
+      <MenuItem icon="hospitalOutline" text="Hospitals" link="/dashboard/hospitals" />
     </Menu>
   </SideBar>
   <Header>

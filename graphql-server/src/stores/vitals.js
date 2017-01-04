@@ -3,7 +3,7 @@ import isDefined from 'mini-dash/isDefined'
 import head from 'mini-dash/head'
 import { augment } from './utils'
 
-const UPDATE_LIMIT = 60 // changes in the last 1 minute will be updates
+const UPDATE_LIMIT = 5 // changes in the last 1 minute will be updates
 const TABLE = 'vitals'
 
 const objectify = grouped => grouped.reduce((object, { group, reduction }) => {
