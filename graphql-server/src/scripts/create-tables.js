@@ -1,5 +1,4 @@
 import { nok, ok, error, warn, success } from './utils'
-import { pooled } from '../database/pool'
 import r from 'rethinkdb'
 
 export function addCreateStatus(promise, table) {
@@ -9,9 +8,9 @@ export function addCreateStatus(promise, table) {
   }).catch(e => error(`  ${nok} error creating ${table}: ${e.message}`))
 }
 
-export default function createTables(args, pool, {tables}) {
+export default function createTables(args, pooled, {tables}) {
   warn('creating tables...')
-  return pooled(pool, conn => {
+  return pooled( conn => {
     const tblPromises = Object.keys(tables).map(table => {
       const { config, indices } = tables[table]
       const tableCreate = r.tableCreate(table, config || {}).run(conn)

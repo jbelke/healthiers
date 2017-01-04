@@ -1,6 +1,5 @@
 import { randomPatient } from './generators'
 import { nok, ok, error, warn, success, createMany } from './utils'
-import { pooled } from '../database/pool'
 import r from 'rethinkdb'
 
 const quantites = {
@@ -25,17 +24,17 @@ function addStatus(promise, table, args) {
   }).catch(e => error(`  ${nok} error saving records to ${table}: ${e.message}`))
 }
 
-function createUsers(args, pool) {
-  return pooled(pool, conn =>
+function createUsers(args, pooled) {
+  return pooled(conn =>
     r.table('patients')
       .insert(createMany(randomPatient, quantity('patient', args)))
       .run(conn)
   )
 }
 
-export default function createData(args, pool) {
+export default function createData(args, pooled) {
   warn('creating random data...')
   return Promise.all([
-    addStatus(createUsers(args, pool), 'patient', args),
+    addStatus(createUsers(args, pooled), 'patient', args),
   ])
 }

@@ -1,5 +1,4 @@
 import { nok, ok, error, warn, success } from './utils'
-import { pooled } from '../database/pool'
 import r from 'rethinkdb'
 
 export function addStatus(promise, table) {
@@ -9,9 +8,9 @@ export function addStatus(promise, table) {
   }).catch(e => error(`  ${nok} error deleting ${table}: ${e.message}`))
 }
 
-export default function dropTables(args, pool, {tables}) {
+export default function dropTables(args, pooled, {tables}) {
   warn('droping tables...')
-  return pooled(pool, conn => {
+  return pooled(conn => {
     const tableNames = Object.keys(tables)
     const promises = tableNames.map(tbl => addStatus(r.tableDrop(tbl).run(conn), tbl))
     return Promise.all(promises)
