@@ -1,17 +1,32 @@
 @import '../../variables.scss';
 @import '../../utils.scss';
 
-.textField {
-  font-family: $font;
-  color: $primary-color;
-  border: none;
-  outline: none;
-  border-bottom: 2px solid transparent;
+.fieldContainer {
+  position: relative;
+  
+  .textField {
+    font-family: $font;
+    color: $primary-color;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid transparent;
 
-  &:focus {
-    border-bottom: 2px solid $accent-color !important;
+    &:focus {
+      border-bottom: 2px solid $accent-color !important;
+    }
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+    }
   }
-  &:-webkit-autofill {
-    -webkit-box-shadow: 0 0 0px 1000px white inset;
+
+  .fieldIcon {
+    display: block;
+    position: absolute;
+    right: 5px;
+    top: 0;
+    pointer-events: none;
+    line-height: 1;
+    height: 100%;
+    text-align: center;
   }
 }

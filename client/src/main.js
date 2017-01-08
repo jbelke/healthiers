@@ -16,6 +16,7 @@ import { LoginContainer } from './components/containers/login'
 import { DashboardContainer } from './components/containers/dashboard'
 import { RecordsContainer } from './components/containers/records'
 import { SignupContainer } from './components/containers/signup'
+import { ProfileContainer } from './components/containers/profile'
 
 const RootContainer = ({children}) => <div>{children}</div>
 
@@ -33,6 +34,7 @@ ReactDOM.render(
         <Route path='dashboard' component={DashboardContainer}>
           <IndexRoute component={RecordsContainer} />
           <Route path='records' component={RecordsContainer} />
+          <Route path='profile' component={ProfileContainer} />
         </Route>
         <Route path='login' component={LoginContainer} />
         <Route path='signup' component={SignupContainer} />

@@ -1,8 +1,15 @@
 import React from 'react'
 import classNames from 'classnames'
-import { textField } from './style'
+import { textField, fieldContainer, fieldIcon } from './style'
+import { Icon } from '../icon'
 
-export const TextField = ({className, type, ...rest}) => (<input
-  type={type || 'text'}
-  className={classNames(textField, className)}
-  {...rest} />)
+//<Icon className={fieldIcon} name='userOutline' />
+
+export const TextField = ({className, type, ...rest}) => {
+  return <div className={fieldContainer}>
+    <input
+      type={type || 'text'}
+      className={classNames(textField, className)}
+      {...rest} />
+  </div>
+}

@@ -5,6 +5,7 @@ import { loginReducer } from './login'
 import { signupReducer } from './signup'
 import { vitalsReducer } from './vitals'
 import { vitalsCardReducer } from './vitals-card'
+import { profileReducer } from './profile'
 
 export default combineReducers({
   routing: routerReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   login: loginReducer,
   signup: signupReducer,
   vitals: vitalsReducer,
-  vitalsCards: vitalsCardReducer
+  vitalsCards: vitalsCardReducer,
+  profile: profileReducer,
 })

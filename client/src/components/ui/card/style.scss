@@ -1,5 +1,6 @@
 @import '~breakpoint-sass/stylesheets/breakpoint';
 @import '../../variables.scss';
+@import '../../utils.scss';
 
 $cardColumns: 6;
 
@@ -21,8 +22,6 @@ $cardColumns: 6;
   .card {
     box-sizing: border-box;
     width: 100%;
-    border-radius: 4px;
-    border: 1px solid $muted-color;
-    box-shadow: 0px 1px 1px #ccc;
+    @include cardLike
   }
 }

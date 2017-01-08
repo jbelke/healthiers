@@ -3,6 +3,7 @@ import { combineEpics } from 'redux-observable'
 import { fetchLoginToken, redirectAfterLogin, clearLoginOnFailure, clearLoginOnSuccess } from './login'
 import { doSignup, redirectAfterSignup, clearSignupOnSuccess, clearSignupOnFailure } from './signup'
 import { fetchVitals, addVitals } from './vitals'
+import { fetchProfile } from './profile'
 
 const epics = combineEpics(
   // login
@@ -17,9 +18,12 @@ const epics = combineEpics(
   clearSignupOnSuccess,
   clearSignupOnFailure,
 
-  //vitals
+  // vitals
   fetchVitals,
-  addVitals
+  addVitals,
+
+  // profile
+  fetchProfile
 )
 
 export default dependencies => (...args) => epics(...args, dependencies)

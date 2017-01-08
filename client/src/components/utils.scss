@@ -1,5 +1,13 @@
+@import './variables.scss';
+
 @mixin verticalCenter {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+
+@mixin cardLike {
+  border-radius: 4px;
+  border: 1px solid $muted-color;
+  box-shadow: 0px 1px 1px #ccc;
 }
