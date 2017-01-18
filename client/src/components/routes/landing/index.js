@@ -1,5 +1,5 @@
 import React from 'react'
 
-export const LandingContainer = () => <div>
+export const LandingRoute = () => <div>
   Hello on the site!
 </div>

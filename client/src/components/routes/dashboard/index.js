@@ -3,7 +3,7 @@ import React from 'react'
 import { SideBar, Title } from '../../ui/sidebar'
 import { Menu, MenuItem, } from '../../ui/sidebar/menu'
 
-export const DashboardContainer = ({ children }) => <div>
+export const DashboardRoute = ({ children }) => <div>
   <SideBar>
     <Title icon="heartOutline" title="Healthiers" />
     <Menu>

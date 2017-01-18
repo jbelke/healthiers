@@ -90,8 +90,8 @@ export class SignupContainer extends React.Component {
     const {onSubmit, updateEmail, updateFirstName, updateLastName, updatePassword,
       updatePasswordRepeat, buttonDisabled, buttonText, buttonKind} = this
 
-    const props = this.props.signup
-    const {email, firstName, lastName, password, passwordRepeat } = props
+    const signupProps = this.props.signup
+    const {email, firstName, lastName, password, passwordRepeat } = signupProps
 
     return <FullPageContainer>
       <FormContainer>
@@ -105,7 +105,7 @@ export class SignupContainer extends React.Component {
           <TextField onChange={updatePassword} type='password' placeholder='Password' value={password || ''} />
           <TextField onChange={updatePasswordRepeat} type='password' placeholder='Repeat password' value={passwordRepeat || ''} />
 
-          <Button disabled={buttonDisabled(props)} text={buttonText(props)} type='submit' kind={buttonKind(props)} />
+          <Button disabled={buttonDisabled(signupProps)} text={buttonText(signupProps)} type='submit' kind={buttonKind(signupProps)} />
         </FormContent>
       </FormContainer>
     </FullPageContainer>
