@@ -9,7 +9,7 @@ import { Router, Route, browserHistory, IndexRoute, IndexRedirect } from 'react-
 import { syncHistoryWithStore } from 'react-router-redux'
 
 import createStore from './store'
-import { gql } from './graphql'
+import { gqlObservable as gql } from './graphql'
 
 import { AppRoute } from './components/routes/app'
 import { LandingRoute } from './components/routes/landing'

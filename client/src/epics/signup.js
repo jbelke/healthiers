@@ -5,7 +5,7 @@ import { signupQuery } from '../graphql/queries/signup'
 
 export const doSignup = (action$, _, { gql }) => action$.ofType(REQUESTED_SIGNUP)
   .map(({ payload }) => payload)
-  .flatMap(payload => gql.observable(signupQuery, { input: payload })
+  .flatMap(payload => gql(signupQuery, { input: payload })
     .map(() => successfulSignup())
     .catch(([error]) => Observable.of(failedSignup(error.message)))
   )

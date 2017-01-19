@@ -5,7 +5,7 @@ import { loginQuery } from '../graphql/queries/login'
 
 export const fetchLoginToken = (action$, _, { gql }) => action$.ofType(REQUESTED_LOGIN)
   .map(action => action.payload)
-  .flatMap(payload => gql.observable(loginQuery, { input: payload })
+  .flatMap(payload => gql(loginQuery, { input: payload })
     .map(({login}) => successfulLogin(login.token))
     .catch(([error]) => Observable.of(failedLogin(error.message)))
   )
